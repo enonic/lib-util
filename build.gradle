@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url 'http://repo.enonic.net/public'
+        }
+    }
+
+    dependencies {
+        classpath 'com.enonic.xp.gradle:gradle-plugin:1.1.0'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'idea'
+apply plugin: 'com.enonic.xp.gradle.module'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
+version = '1.0.0'
+group = 'com.enonic.lib'
+
+module {
+    displayName = 'Enonic XP UTIL library'
+}
+
+publishing {
+  publications {
+    mavenJava( MavenPublication ) {
+      from components.java
+    }
+  }
+  repositories {
+    maven {
+      url 'http://repo.enonic.net/artifactory/public'
+    }
+  }
+}
