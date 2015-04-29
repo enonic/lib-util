@@ -20,7 +20,7 @@ apply plugin: 'com.enonic.xp.gradle.module'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
-version = '1.0.0'
+version = '0.0.3'
 group = 'com.enonic.lib'
 
 module {
