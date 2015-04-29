@@ -2,7 +2,7 @@ exports.content = {};
 
 /**
  * Get content by key (path or id)
- * @param {string} Content key
+ * @param {string} key - Content key
  * @returns {object} Content object
  */
 exports.content.get = function (key) {
@@ -30,8 +30,8 @@ exports.content.exists = function (path) {
 
 /**
  * Get content property
- * @param {string} Content key
- * @param {string} Property name
+ * @param {string} key - Content key
+ * @param {string} property - Property name
  * @returns {*}
  */
 exports.content.getProperty = function (key, property) {
@@ -45,7 +45,7 @@ exports.content.getProperty = function (key, property) {
 /**
  * Returns the path to the content location. If the key to a content is passed, it will be used. If contenKey is null, the path
  * to the page that the part is on will be returned.
- * @param {Content} content key. Example: config['saveFolder']
+ * @param {Content} contentKey - content key. Example: config['saveFolder']
  * @return {String} Returns the path of the save location.
  */
 exports.content.getPath = function (contentKey) {

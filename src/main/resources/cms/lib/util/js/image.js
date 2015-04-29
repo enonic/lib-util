@@ -7,12 +7,12 @@ var prescaledImageSizes = config.prescaledImageSizes || [256, 512, 1024];
 
 /**
  * Creates image object.
- * @param {String} The image content key
- * @param {String} Scaling filter
- * @param {String} Additional image filters
- * @param {String} Image format
- * @param {String} Image quality (JPEG)
- * @param {Boolean} Create responsive image sizes?
+ * @param {String} key - The image content key
+ * @param {String} scaling - Scaling filter
+ * @param {String} filter - Additional image filters
+ * @param {String} format - Image format
+ * @param {String} quality - Image quality (JPEG)
+ * @param {Boolean} responsive - Create responsive image sizes?
  * @return {Object} The image object
  */
 exports.image.create = function (key, scaling, filter, format, quality, responsive) {
@@ -42,11 +42,11 @@ exports.image.create = function (key, scaling, filter, format, quality, responsi
 
 /**
  * Creates image URL.
- * @param {String} The image content key
- * @param {String} Scaling filter
- * @param {String} Additional image filters
- * @param {String} Image format
- * @param {String} Image quality (JPEG)
+ * @param {String} key - The image content key
+ * @param {String} scaling - Scaling filter
+ * @param {String} filter - Additional image filters
+ * @param {String} format - Image format
+ * @param {String} quality - Image quality (JPEG)
  * @return {String} The image URL
  */
 exports.image.createUrl = function (key, scaling, filter, format, quality) {
@@ -64,11 +64,11 @@ exports.image.createUrl = function (key, scaling, filter, format, quality) {
 
 /**
  * Creates image responsive srcset.
- * @param {Object} The image content
- * @param {String} Scaling filter
- * @param {String} Additional image filters
- * @param {String} Image format
- * @param {String} Image quality (JPEG)
+ * @param {Object} image - The image content
+ * @param {String} scaling - Scaling filter
+ * @param {String} filter - Additional image filters
+ * @param {String} format - Image format
+ * @param {String} quality - Image quality (JPEG)
  * @return {Object} The image srcset
  */
 function createSrcSet(image, scaling, filter, format, quality) {
@@ -84,7 +84,7 @@ function createSrcSet(image, scaling, filter, format, quality) {
 
 /**
  * Get individual scale parameters from scaling parameter.
- * @param {String} Scaling filter
+ * @param {String} scaling - Scaling filter
  * @return {Array} The individual scaling parameters
  */
 function getScaleParameters(scaling) {
@@ -98,8 +98,9 @@ function getScaleParameters(scaling) {
 
 /**
  * Create final scale filter based on selected scaling filter and available width
- * @param {Object} The image content
- * @param {String} Scaling filter
+ * @param {Object} image - The image content
+ * @param {String} scaling - Scaling filter
+ * @param {} width
  * @return {Integer} Available width
  */
 function createScaleFilter(image, scaling, width) {
@@ -137,7 +138,7 @@ function createScaleFilter(image, scaling, width) {
 
 /**
  * Get image dimensions (width and height) for image
- * @param {Object} The image content
+ * @param {Object} image - The image content
  * @return {Object} The image dimensions
  */
 function getImageDimensions(image) {
@@ -152,7 +153,7 @@ function getImageDimensions(image) {
 
 /**
  * Get aspect ratio (width divided by height) of image
- * @param {Object} The image content
+ * @param {Object} image - The image content
  * @return {Float} The image aspect ratio
  */
 function getImageAspectRatio(image) {
@@ -175,8 +176,8 @@ function getScaleTypes() {
 
 /**
  * Calculate optimal dimensions (width and height) for placeholder image
- * @param {Object} The image content
- * @param {String} Scaling filter
+ * @param {Object} image - The image content
+ * @param {String} scaling - Scaling filter
  * @return {Object} Placeholder (dimensions)
  */
 function createPlaceholder(image, scaling) {
@@ -207,8 +208,8 @@ function createPlaceholder(image, scaling) {
 
 /**
  * Calculates the greatest common divisor for a and b
- * @param {Integer}
- * @param {Integer}
+ * @param {Integer} a
+ * @param {Integer} b
  * @return {Integer} Greatest common divisor
  */
 function greatestCommonDivisor(a, b) {

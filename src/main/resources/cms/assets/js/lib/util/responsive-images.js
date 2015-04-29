@@ -45,7 +45,7 @@ function ResponsiveImages(element, settings) {
         return sizes;
     };
 
-    // Get's the closest higher number in array
+    // Gets the closest higher number in array
     this.getClosestHigherNum = function (num, ar) {
         var closest = ar[ar.length - 1];
         for (var i = ar.length; i >= 0; i--) {

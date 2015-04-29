@@ -16,7 +16,7 @@ exports.data.forceArray = function(data) {
 /**
  * Trim empty array elements
  * Note that current UTIL.log function won't reflect the changes due to a bug in JSON.stringify
- * @param {Array} Array to trim
+ * @param {Array} array - Array to trim
  * @returns {Array} Trimmed array
  */
 exports.data.trimArray = function(array) {

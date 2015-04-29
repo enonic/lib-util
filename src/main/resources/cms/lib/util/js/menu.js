@@ -3,7 +3,7 @@ exports.data = require('data.js').data;
 
 /**
  * Get menu tree
- * @param {integer} menu levels to get
+ * @param {integer} levels - menu levels to get
  * @returns {Array}
  */
 exports.menu.get = function (levels) {
@@ -20,8 +20,8 @@ exports.menu.get = function (levels) {
 
 /**
  * Returns submenus of a parent menuitem.
- * @param {Content} content object obtained with 'portal.getContent', 'portal.getSite' or any 'content.*' commands
- * @param {Integer} The number of submenus to retrieve
+ * @param {Content} parentContent - content object obtained with 'portal.getContent', 'portal.getSite' or any 'content.*' commands
+ * @param {Integer} levels - The number of submenus to retrieve
  * @return {Array} Array of submenus
  */
 function getSubMenus(parentContent, levels) {
@@ -50,7 +50,7 @@ function getSubMenus(parentContent, levels) {
 
 /**
  * Checks if the content is a menu item.
- * @param {Content} content object obtained with 'portal.getContent', 'portal.getSite' or any 'content.*' commands
+ * @param {Content} content - content object obtained with 'portal.getContent', 'portal.getSite' or any 'content.*' commands
  * @return {Boolean} true if the content is marked as menu item
  */
 function isMenuItem(content) {
@@ -71,8 +71,8 @@ function isMenuItem(content) {
 
 /**
  * Returns JSON data for a menuitem.
- * @param {Content} content object obtained with 'portal.getContent', 'portal.getSite' or any 'content.*' commands
- * @param {Integer} The number of submenus to retrieve
+ * @param {Content} content - content object obtained with 'portal.getContent', 'portal.getSite' or any 'content.*' commands
+ * @param {Integer} levels - The number of submenus to retrieve
  * @return {Object} Menuitem JSON data
  */
 function menuItemToJson(content, levels) {
