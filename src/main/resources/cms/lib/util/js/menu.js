@@ -13,7 +13,7 @@ exports.menu.get = function (levels) {
     if (!site) {
         return [];
     }
-    var menu = getSubMenus(site, levels);
+    var menu = exports.menu.getSubMenus(site, levels);
 
     return menu;
 };
@@ -24,7 +24,7 @@ exports.menu.get = function (levels) {
  * @param {Integer} levels - The number of submenus to retrieve
  * @return {Array} Array of submenus
  */
-function getSubMenus(parentContent, levels) {
+exports.menu.getSubMenus = function (parentContent, levels) {
     var subMenus = [];
 
     if (parentContent.type === 'portal:site' && isMenuItem(parentContent)) {
@@ -78,7 +78,7 @@ function isMenuItem(content) {
 function menuItemToJson(content, levels) {
     var subMenus = [];
     if (levels > 0) {
-        subMenus = getSubMenus(content, levels);
+        subMenus = exports.menu.getSubMenus(content, levels);
     }
 
     var moduleNamePropertyName = module.name.replace(/\./g, '-');
