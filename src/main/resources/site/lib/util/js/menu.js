@@ -1,5 +1,7 @@
 exports.menu = {};
 exports.data = require('data.js').data;
+var portal = require('/lib/xp/portal');
+var contentSvc = require('/lib/xp/content');
 
 /**
  * Get menu tree
@@ -8,7 +10,7 @@ exports.data = require('data.js').data;
  */
 exports.menu.get = function (levels) {
     levels = (exports.data.isInt(levels) ? levels : 1);
-    var site = execute('portal.getSite');
+    var site = portal.getSite();
 
     if (!site) {
         return [];
@@ -31,7 +33,7 @@ function getSubMenus(parentContent, levels) {
         subMenus.push(menuItemToJson(parentContent, 0));
     }
 
-    var children = execute('content.getChildren', {
+    var children = contentSvc.getChildren({
         key: parentContent._id,
         count: 100
     });

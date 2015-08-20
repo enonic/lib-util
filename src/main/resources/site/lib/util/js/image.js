@@ -1,5 +1,6 @@
 exports.image = {};
 exports.content = require('content.js').content;
+var portal = require('/lib/xp/portal');
 
 var config = require('../config.js').config;
 
@@ -54,7 +55,7 @@ exports.image.createUrl = function (key, scaling, filter, format, quality) {
     var finalFilter = [filter, scaling].filter(function (val) {
         return val;
     }).join(';');
-    return execute('portal.imageUrl', {
+    return portal.imageUrl({
         id: key,
         filter: finalFilter,
         format: format,

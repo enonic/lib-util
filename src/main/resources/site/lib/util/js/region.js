@@ -1,4 +1,5 @@
 exports.region = {};
+var portal = require('/lib/xp/portal');
 
 /**
  * Get regions in correct order
@@ -7,7 +8,7 @@ exports.region = {};
  */
 exports.region.get = function(potentialRegions) {
     var regions = [];
-    var component = execute('portal.getComponent');
+    var component = portal.getComponent();
     for (var i = 0; i < potentialRegions.length; i++) {
         if (component.regions[potentialRegions[i]]) {
             regions.push(component.regions[potentialRegions[i]]);
