@@ -12,6 +12,8 @@ exports.menu.get = function (levels) {
     levels = (exports.data.isInt(levels) ? levels : 1);
     var site = portal.getSite();
 
+
+
     if (!site) {
         return [];
     }
@@ -38,9 +40,10 @@ function getSubMenus(parentContent, levels) {
         count: 100
     });
 
+
     levels--;
 
-    children.contents.forEach(function (child) {
+    children.hits.forEach(function (child) {
         if (isMenuItem(child)) {
             subMenus.push(menuItemToJson(child, levels));
         }
