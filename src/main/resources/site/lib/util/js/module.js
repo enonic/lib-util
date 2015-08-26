@@ -1,18 +1,18 @@
-exports.module = {};
+exports.app = {};
 
 /**
- * Get full module name
+ * Get full app name
  * @returns {String}
  */
-exports.module.getName = function () {
-    return module.name;
+exports.app.getName = function () {
+    return app.name;
 };
 
 /**
- * Get short module name (last part)
+ * Get short app name (last part)
  * @returns {String}
  */
-exports.module.getShortName = function () {
-    var moduleName = exports.module.getName();
-    return moduleName.split('.').pop();
+exports.app.getShortName = function () {
+    var appName = exports.app.getName();
+    return appName.split('.').pop();
 };

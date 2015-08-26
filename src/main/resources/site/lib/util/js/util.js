@@ -1,5 +1,5 @@
 exports.data = require('data.js').data;
-exports.module = require('module.js').module;
+//exports.module = require('module.js').module;
 exports.content = require('content.js').content;
 exports.image = require('image.js').image;
 exports.menu = require('menu.js').menu;

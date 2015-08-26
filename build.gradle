@@ -21,7 +21,7 @@ apply plugin: 'com.enonic.xp.app'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
-version = '0.0.5'
+version = '0.0.7'
 group = 'com.enonic.lib'
 
 app {

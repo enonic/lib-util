@@ -60,8 +60,8 @@ function isMenuItem(content) {
     if (!extraData) {
         return false;
     }
-    var moduleNamePropertyName = module.name.replace(/\./g, '-');
-    var extraDataModule = extraData[moduleNamePropertyName];
+    var appNamePropertyName = app.name.replace(/\./g, '-');
+    var extraDataModule = extraData[appNamePropertyName];
     if (!extraDataModule || !extraDataModule['menu-item']) {
         return false;
     }
@@ -83,8 +83,8 @@ function menuItemToJson(content, levels) {
         subMenus = getSubMenus(content, levels);
     }
 
-    var moduleNamePropertyName = module.name.replace(/\./g, '-');
-    var menuItem = content.x[moduleNamePropertyName]['menu-item'];
+    var appNamePropertyName = app.name.replace(/\./g, '-');
+    var menuItem = content.x[appNamePropertyName]['menu-item'];
     return {
         displayName: content.displayName,
         menuName: menuItem.menuName && menuItem.menuName.length ? menuItem.menuName : null,
