@@ -21,11 +21,11 @@ apply plugin: 'com.enonic.xp.app'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
-version = '0.0.8'
+version = '0.0.9'
 group = 'com.enonic.lib'
 
 app {
-    name = 'com.enonic.wem.apps.util'
+    name = 'com.enonic.lib.util'
     displayName = 'Enonic XP UTIL library'
     vendorName = 'Enonic AS'
     vendorUrl = 'http://enonic.com'
