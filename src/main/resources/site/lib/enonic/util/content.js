@@ -1,4 +1,3 @@
-exports.content = {};
 var portal = require('/lib/xp/portal');
 var contentSvc = require('/lib/xp/content');
 
@@ -7,7 +6,7 @@ var contentSvc = require('/lib/xp/content');
  * @param {string} key - Content key
  * @returns {object} Content object
  */
-exports.content.get = function (key) {
+exports.get = function (key) {
     var content;
     if (typeof key == 'undefined') {
         content = portal.getContent();
@@ -25,8 +24,8 @@ exports.content.get = function (key) {
  * @param {string} path
  * @returns {boolean}
  */
-exports.content.exists = function (path) {
-    return exports.content.get(path) ? true : false;
+exports.exists = function (path) {
+    return exports.get(path) ? true : false;
 };
 
 
@@ -36,11 +35,11 @@ exports.content.exists = function (path) {
  * @param {string} property - Property name
  * @returns {*}
  */
-exports.content.getProperty = function (key, property) {
+exports.getProperty = function (key, property) {
     if (!key || !property) {
         return null;
     }
-    var result = exports.content.get(key);
+    var result = exports.get(key);
     return result ? result[property] : null;
 };
 
@@ -50,11 +49,11 @@ exports.content.getProperty = function (key, property) {
  * @param {Content} contentKey - content key. Example: config['saveFolder']
  * @return {String} Returns the path of the save location.
  */
-exports.content.getPath = function (contentKey) {
+exports.getPath = function (contentKey) {
     var defaultContent = portal.getContent();
     var contentPath;
     if (contentKey) {
-        var content = exports.content.get(contentKey);
+        var content = exports.get(contentKey);
         if (content) {
             contentPath = content._path;
         }

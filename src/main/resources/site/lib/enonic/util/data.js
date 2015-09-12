@@ -1,12 +1,10 @@
-exports.data = {};
-
 /**
  * Force data to array
  * Note that current UTIL.log function won't reflect the changes due to a bug in JSON.stringify
  * @param data
  * @returns {Array}
  */
-exports.data.forceArray = function(data) {
+exports.forceArray = function(data) {
     if (!Array.isArray(data)) {
         data = [data];
     }
@@ -19,9 +17,9 @@ exports.data.forceArray = function(data) {
  * @param {Array} array - Array to trim
  * @returns {Array} Trimmed array
  */
-exports.data.trimArray = function(array) {
+exports.trimArray = function(array) {
     // Make sure array is an array
-    array = exports.data.forceArray(array);
+    array = exports.forceArray(array);
     var trimmedArray = [];
     for (var i = 0; i < array.length; i++) {
         var empty = true;
@@ -45,12 +43,12 @@ exports.data.trimArray = function(array) {
  * @param {Object} obj
  * @param {boolean} recursive
  */
-exports.data.deleteEmptyProperties = function(obj, recursive) {
+exports.deleteEmptyProperties = function(obj, recursive) {
     for (var i in obj) {
         if (obj[i] === '') {
             delete obj[i];
         } else if (recursive && typeof obj[i] === 'object') {
-            exports.data.deleteEmptyProperties(obj[i], recursive);
+            exports.deleteEmptyProperties(obj[i], recursive);
         }
     }
 };
@@ -60,7 +58,7 @@ exports.data.deleteEmptyProperties = function(obj, recursive) {
  * @param value
  * @returns {boolean}
  */
-exports.data.isInt = function(value) {
+exports.isInt = function(value) {
     return !isNaN(value) &&
         parseInt(Number(value)) == value &&
         !isNaN(parseInt(value, 10));

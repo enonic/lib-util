@@ -1,7 +1,7 @@
-exports.app = require('app.js').app;
-exports.data = require('data.js').data;
-exports.content = require('content.js').content;
-exports.region = require('region.js').region;
+exports.app = require('app');
+exports.data = require('data');
+exports.content = require('content');
+exports.region = require('region');
 
 /**
  * Log data
