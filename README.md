@@ -16,7 +16,7 @@
 
 ### Controllers
 
-    var menu = require('/lib/enonic/util/util');
+    var UTIL = require('/lib/enonic/util/util');
 
 ## Compatibility
 
