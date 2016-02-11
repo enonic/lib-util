@@ -63,3 +63,26 @@ exports.isInt = function(value) {
         parseInt(Number(value)) == value &&
         !isNaN(parseInt(value, 10));
 };
+
+
+/**
+ * checks recursivly if an object have a property
+ * @param {string} name of the property to search for
+ * @param {object} the object to search in
+ * @returns {boolean}
+*/
+exports.hasProperty = function(propertyName, obj){
+
+  var isPropertyInArray = false;
+
+  if( Object.keys(obj).indexOf(propertyName) == 0 ){
+    isPropertyInArray = true;
+  } else {
+    for( prop in obj ){
+      if( typeof(obj[prop]) == 'object'){
+        isPropertyInArray = hasProperty( propertyName, obj[prop] );
+      }
+    }
+  }
+  return isPropertyInArray;
+}
