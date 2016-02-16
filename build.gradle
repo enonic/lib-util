@@ -8,28 +8,16 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.enonic.xp:gradle-plugin:6.0.0'
+        classpath "com.enonic.xp:gradle-plugin:${xpVersion}"
     }
 }
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
-apply plugin: 'idea'
 apply plugin: 'com.enonic.xp.app'
-apply plugin: 'maven'
 apply plugin: 'maven-publish'
-
-version = '1.0.0'
-group = 'com.enonic.lib'
-
-app {
-    name = 'com.enonic.lib.util'
-    displayName = 'Enonic XP UTIL library'
-    vendorName = 'Enonic AS'
-    vendorUrl = 'http://enonic.com'
-}
 
 publishing {
   publications {
