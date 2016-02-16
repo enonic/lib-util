@@ -1,4 +1,6 @@
-var portal = require('/lib/xp/portal');
+var libs = {
+    portal: require('/lib/xp/portal')
+};
 
 /**
  * Get regions as array
@@ -6,7 +8,7 @@ var portal = require('/lib/xp/portal');
  */
 exports.get = function() {
 
-    var component = portal.getComponent();
+    var component = libs.portal.getComponent();
     var regions = component.regions;
 
     var regionArray = [];

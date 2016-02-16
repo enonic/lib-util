@@ -1,5 +1,7 @@
-var portal = require('/lib/xp/portal');
-var contentSvc = require('/lib/xp/content');
+var libs = {
+    portal: require('/lib/xp/portal'),
+    content: require('/lib/xp/content')
+};
 
 /**
  * Get content by key (path or id)
@@ -9,10 +11,10 @@ var contentSvc = require('/lib/xp/content');
 exports.get = function (key) {
     var content;
     if (typeof key == 'undefined') {
-        content = portal.getContent();
+        content = libs.portal.getContent();
     }
     else {
-        content = contentSvc.get({
+        content = libs.content.get({
             key: key
         });
     }
@@ -50,7 +52,7 @@ exports.getProperty = function (key, property) {
  * @return {String} Returns the path of the save location.
  */
 exports.getPath = function (contentKey) {
-    var defaultContent = portal.getContent();
+    var defaultContent = libs.portal.getContent();
     var contentPath;
     if (contentKey) {
         var content = exports.get(contentKey);
