@@ -11,7 +11,7 @@
     }
 
     dependencies {
-        include 'com.enonic.lib:util:1.1.0'
+        include 'com.enonic.lib:util:1.1.1'
     }
 
 ### Controllers
@@ -23,5 +23,6 @@
 
 | Lib version        | XP version |
 | ------------- | ------------- |
+| 1.1.1 | 6.3.1 |
 | 1.1.0 | 6.3.1 |
 | 1.0.0 | 6.0.0 |
