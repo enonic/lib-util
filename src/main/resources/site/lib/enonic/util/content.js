@@ -62,3 +62,22 @@ exports.getPath = function (contentKey) {
     }
     return contentPath ? contentPath : defaultContent._path;
 };
+
+/**
+ * Gets content from a content ID (string) or an array of content IDs. Very useful for ContentSelectors.
+ * @param {array or string} contentIDs - Array of content IDs or a single content ID as a string.
+ * @returns {array} Array of content items
+ */
+exports.getInOrder = function(contentIDs) {
+    if (!Array.isArray(contentIDs)) {
+        contentIDs = [contentIDs];
+    }
+    var contentArray = [];
+    contentIDs.map(function(id) {
+        var content = libs.content.get({key: id});
+        if(content) {
+            contentArray.push(content);
+        }
+    });
+    return contentArray;
+};
