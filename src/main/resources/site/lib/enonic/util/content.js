@@ -81,3 +81,12 @@ exports.getInOrder = function(contentIDs) {
     });
     return contentArray;
 };
+
+/**
+ * Get the query for an array of content IDs or a single ID string. Useful for getting multiple content from ContentSelectors
+ * @param {array or string} contentIDs - Array of content IDs or a single ID as a string
+ * @returns {string} Query string for array of content IDs '_id IN ("c300beed-3777-4a5d-87a7-4a8ee743ea76", "d04c31e5-eb63-4921-bec5-1672b4a80bd5")'
+ */
+exports.getQueryFromIDs = function(contentIDs) {
+    return '_id IN (' + JSON.stringify(contentIDs).replace('[','').replace(']','') + ')';
+};
