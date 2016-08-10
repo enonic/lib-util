@@ -1,4 +1,4 @@
-package com.enonic.xp.encode;
+package com.enonic.lib.encode;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;

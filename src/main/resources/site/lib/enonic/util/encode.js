@@ -76,7 +76,7 @@ exports.hashString = function(input, algorithm, charEncoding) {
     var charEncoding = typeof charEncoding !== 'undefined' ? charEncoding : 'UTF-8';
     var bean, encodedValue;
     try {
-        bean = __.newBean("com.enonic.xp.encode.Encoder");
+        bean = __.newBean("com.enonic.lib.encode.Encoder");
         if(algorithm == 'base64') {
             encodedValue = bean.base64(input, charEncoding);
         } else {
@@ -98,7 +98,7 @@ exports.hashString = function(input, algorithm, charEncoding) {
 exports.hashFile = function(stream, algorithm) {
     var bean, encodedValue;
     try {
-        bean = __.newBean("com.enonic.xp.encode.Encoder");
+        bean = __.newBean("com.enonic.lib.encode.Encoder");
         encodedValue = bean.hash(stream, algorithm);
     } catch (e) {
         log.error('Failed to ' + algorithm + ' hash file.');
