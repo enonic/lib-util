@@ -40,16 +40,16 @@ exports.isSet = function (value) {
  */
 exports.isNotSet = function (value) {
     return value === null || typeof value === 'undefined';
-}
+};
 
 /**
  * Returns the value if the value is set. Otherwise returns an empty string.
  * @param {*} value
  * @returns value || ''
  */
-exports.emptyStringIfNotSet = function (value) {
+exports.valueOrEmptyString = function (value) {
     return exports.isSet(value) ? value : '';
-}
+};
 
 /**
  * Returns the value1 if the value1 is set. Otherwise returns value2.
@@ -57,9 +57,9 @@ exports.emptyStringIfNotSet = function (value) {
  * @param {*} value2
  * @returns value || ''
  */
-exports.valueIfSetOr = function (value1, value2) {
+exports.valueOr = function (value1, value2) {
     return exports.isSet(value1) ? value1 : value2;
-}
+};
 
 /**
  * If the value is set: execute the function expression with value as the first
@@ -73,4 +73,4 @@ exports.ifSetPassToFunction = function (value, fn) {
     if (exports.isSet(value)) {
         return fn(value);
     }
-}
+};
