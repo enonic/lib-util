@@ -63,3 +63,75 @@ exports.isInt = function(value) {
         parseInt(Number(value)) == value &&
         !isNaN(parseInt(value, 10));
 };
+
+
+
+/**
+ * checks recursivly if an object have a property
+ * @param {object} the object to search in
+ * @param {string} name of the property to search for
+ * @returns {boolean}
+*/
+exports.hasProperty = function(object, property){
+
+    var isPropertyInArray = false;
+
+    if( Object.keys(object).indexOf(property) == 0 ){
+        isPropertyInArray = true;
+    } else {
+
+        for(var prop in object){
+            if( typeof(object[prop]) == 'object'){
+                isPropertyInArray = this.hasProperty( object[prop], property  );
+            }
+            if(isPropertyInArray) return isPropertyInArray;
+        }
+    }
+    return isPropertyInArray;
+};
+
+
+/**
+* checks if that property path exists
+* @param {object} object to search in
+* @param {string} the path to look for eg. 'data.property.foo.bar'
+* @returns {boolean}
+*/
+exports.validatePath = function(object, properties){
+
+    var path = [],
+        root = object,
+        prop;
+
+    if ( !root ) {
+        return false;
+    }
+
+    if ( typeof properties === 'string' ) {
+        path = properties ? properties.split('.') : [];
+    } else {
+        if ( Object.prototype.toString.call( properties ) === '[object Array]' ) {
+            path = properties;
+        } else {
+            if ( properties ) {
+                return false;
+            }
+        }
+    }
+
+    while ( prop = path.shift() ) {
+
+        try {
+            if ( prop in root ) {
+                root = root[prop];
+            } else {
+                return false;
+            }
+        } catch(e) {
+            return false;
+        }
+    }
+
+    return true;
+
+}
