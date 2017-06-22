@@ -6,7 +6,7 @@
 
     repositories {
         maven {
-            url 'http://repo.enonic.net/public'
+            url 'http://repo.enonic.com/public'
         }
     }
 
