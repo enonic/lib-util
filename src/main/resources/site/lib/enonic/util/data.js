@@ -63,3 +63,13 @@ exports.isInt = function(value) {
         parseInt(Number(value)) == value &&
         !isNaN(parseInt(value, 10));
 };
+
+/**
+ * Check if value is defined and set (not false)
+ * @param value
+ * @returns {boolean}
+ */
+exports.isSet = function(value) {
+	if (typeof value === 'boolean') { return true } // If value is true/false it is set
+	return value !== null && typeof value !== 'undefined';
+};
