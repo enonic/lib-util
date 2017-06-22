@@ -25,22 +25,20 @@ Please contribute!
 
 ### Controllers (3 & 4)
     // Include the library in any controller
-	 var libs = {
+    var libs = {
         util: require('/lib/enonic/util')
     }
 
-	 // Use any of the functions like so (not working examples):
-	 libs.util.log(x);
-	 libs.util.app.getJsonName(x);
-	 libs.util.data.forceArray(x);
-	 libs.util.data.trimArray(x);
-	 // Refer to each js-file in /lib/enonic/util/ on GitHub for documentation on each function.
+    // Use any of the functions like so (not working examples):
+    libs.util.log(x);
+    libs.util.app.getJsonName(x);
+    libs.util.data.forceArray(x);
+    libs.util.data.trimArray(x);
+    // Refer to each js-file in /lib/enonic/util/ on GitHub for documentation on each function.
 
 ## Compatibility
 
 | Lib version        | XP version |
 | ------------- | ------------- |
-| 1.1.2 | 6.3.1 |
-| 1.1.1 | 6.3.1 |
-| 1.1.0 | 6.3.1 |
+| 1.1.x | 6.3.1 |
 | 1.0.0 | 6.0.0 |
