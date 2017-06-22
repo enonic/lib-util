@@ -65,7 +65,7 @@ exports.isInt = function(value) {
 };
 
 /**
- * Check if value is defined and set (not false)
+ * Check if any value (even false) is set for a JavaScript property. The JS object itself needs to exists.
  * @param value
  * @returns {boolean}
  */
