@@ -16,7 +16,7 @@
 
 ### Controllers
     var libs = {
-        util: require('/lib/enonic/util');
+        util: require('/lib/enonic/util')
     }
 
 ## Compatibility
