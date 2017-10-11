@@ -23,3 +23,8 @@ repositories {
         url 'http://repo.enonic.com/public'
     }
 }
+
+dependencies {
+    include "com.enonic.xp:lib-content:${xpVersion}"
+    include "com.enonic.xp:lib-portal:${xpVersion}"
+}
