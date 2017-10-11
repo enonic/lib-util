@@ -20,7 +20,7 @@ Please contribute!
     }
 
     dependencies {
-        include 'com.enonic.lib:util:1.1.2'
+        include 'com.enonic.lib:util:1.1.3'
     }
 
 ### Controllers (3 & 4)
@@ -38,7 +38,13 @@ Please contribute!
 
 ## Compatibility
 
-| Lib version        | XP version |
-| ------------- | ------------- |
+| Lib version | XP version |
+| ----------- | ---------- |
 | 1.1.x | 6.3.1 |
 | 1.0.0 | 6.0.0 |
+
+## Changelog
+
+### 1.1.3
+
+* Add dependencies for lib-content and lib-portal as they are used.
