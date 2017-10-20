@@ -40,10 +40,14 @@ Please contribute!
 
 | Lib version | XP version |
 | ----------- | ---------- |
-| 1.1.x | 6.3.1 |
+| 1.[12].x | 6.3.1 |
 | 1.0.0 | 6.0.0 |
 
 ## Changelog
+
+### 1.2.0
+
+* Added isSet, isNotSet, valueOr, valueOrEmptyString and ifSetPassToFunction functions.
 
 ### 1.1.3
 
