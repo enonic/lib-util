@@ -1,7 +1,12 @@
 var assert = require('assert');
 
+// This won't work because sub exports require lib-content and lib-portal.
+// Maybe we should mock lib-content and lib-portal for testing purposes.
+//var _util               = require('../src/main/resources/site/lib/enonic/util');
+
+var _data               = require('../src/main/resources/site/lib/enonic/util/data.js');
 var _value              = require('../src/main/resources/site/lib/enonic/util/value.js');
-var isSet               = _value.isSet;
+var isSet               = _data.isSet; // Testing with the one from data to see "require in require" works.
 var isNotSet            = _value.isNotSet;
 var valueOrEmptyString  = _value.valueOrEmptyString;
 var valueOr             = _value.valueOr;

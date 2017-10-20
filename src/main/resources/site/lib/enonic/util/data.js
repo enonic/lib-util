@@ -1,3 +1,6 @@
+var _value = require('./value');
+exports.isSet = _value.isSet;
+
 /**
  * Force data to array
  * Note that current UTIL.log function won't reflect the changes due to a bug in JSON.stringify
@@ -62,14 +65,4 @@ exports.isInt = function(value) {
     return !isNaN(value) &&
         parseInt(Number(value)) == value &&
         !isNaN(parseInt(value, 10));
-};
-
-/**
- * Check if any value (even false) is set for a JavaScript property. The JS object itself needs to exists.
- * @param value
- * @returns {boolean}
- */
-exports.isSet = function(value) {
-	if (typeof value === 'boolean') { return true } // If value is true/false it is set
-	return value !== null && typeof value !== 'undefined';
 };
