@@ -18,7 +18,7 @@ describe('util', function() {
                 assert.strictEqual(false, isSet(value));
             });
         });
-        ['',"",[],{},0,'0'].forEach(function (value) {
+        ['',"",[],{},0,'0',true,false].forEach(function (value) {
             it('should return true when the value is ' + JSON.stringify(value), function() {
                 assert.strictEqual(true, isSet(value));
             });
@@ -34,7 +34,7 @@ describe('util', function() {
                 assert.strictEqual(true, isNotSet(value));
             });
         });
-        ['',"",[],{},0,'0'].forEach(function (value) {
+        ['',"",[],{},0,'0',true,false].forEach(function (value) {
             it('should return false when the value is ' + JSON.stringify(value), function() {
                 assert.strictEqual(false, isNotSet(value));
             });
@@ -51,7 +51,7 @@ describe('util', function() {
                 assert.strictEqual('', valueOrEmptyString(value));
             });
         });
-        ['',"",[],{},0,'0'].forEach(function (value) {
+        ['',"",[],{},0,'0',true,false].forEach(function (value) {
             it('should return the value when the value is ' + JSON.stringify(value), function() {
                 assert.strictEqual(value, valueOrEmptyString(value));
             });
@@ -71,7 +71,7 @@ describe('util', function() {
                 assert.strictEqual('or', valueOr(value, 'or'));
             });
         });
-        ['',"",[],{},0,'0'].forEach(function (value) {
+        ['',"",[],{},0,'0',true,false].forEach(function (value) {
             it('should return the value when the value is ' + JSON.stringify(value), function() {
                 assert.strictEqual(value, valueOr(value, 'or'));
             });
@@ -94,7 +94,7 @@ describe('util', function() {
                 assert.strictEqual(undefined, ifSetPassToFunction(value, function(v) { return v; }));
             });
         });
-        ['',"",[],{},0,'0'].forEach(function (value) {
+        ['',"",[],{},0,'0',true,false].forEach(function (value) {
             it('should pass the value to the function expression and run it when the value is ' + JSON.stringify(value), function() {
                 assert.strictEqual(value, ifSetPassToFunction(value, function(v) { return v; }));
             });
