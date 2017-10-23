@@ -20,34 +20,36 @@ Please contribute!
     }
 
     dependencies {
-        include 'com.enonic.lib:util:1.1.3'
+        include 'com.enonic.lib:util:1.2.0'
     }
 
 ### Controllers (3 & 4)
-    // Include the library in any controller
+    // (3) Require the library in any controller
     var libs = {
         util: require('/lib/enonic/util')
     }
 
-    // Use any of the functions like so (not working examples):
+    // (4) Use any of the functions like so (not working examples, just showing the format):
     libs.util.log(x);
     libs.util.app.getJsonName(x);
     libs.util.data.forceArray(x);
     libs.util.data.trimArray(x);
-    // Refer to each js-file in /lib/enonic/util/ on GitHub for documentation on each function.
+
+Refer to each js-file in /lib/enonic/util/ on GitHub for documentation on each function.
 
 ## Compatibility
 
 | Lib version | XP version |
 | ----------- | ---------- |
-| 1.[12].x | 6.3.1 |
+| 1.2.x | 6.3.1 |
+| 1.1.x | 6.3.1 |
 | 1.0.0 | 6.0.0 |
 
 ## Changelog
 
 ### 1.2.0
 
-* Added isSet, isNotSet, valueOr, valueOrEmptyString and ifSetPassToFunction functions.
+* Introducing the new "value.js" function library that adds handy functions like `isSet`, `isNotSet`, `valueOr`, `valueOrEmptyString` and `ifSetPassToFunction`.
 
 ### 1.1.3
 
