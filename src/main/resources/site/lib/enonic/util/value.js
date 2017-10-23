@@ -1,20 +1,35 @@
+/////////////////////////////////////////////////////////////////////////
+// Functionality to help with values (return or check)                 //
+/////////////////////////////////////////////////////////////////////////
 
 /**
  * Returns true if a value is set. Returns false if the value is NOT set.
  * @param {*} value
- * @returns true || false
+ * @returns {boolean}
  */
 exports.isSet = function (value) {
+    if (typeof value === 'boolean') { return true } // If value is true/false it is set
     return value !== null && typeof value !== 'undefined';
 };
 
 /**
  * Returns true if a value is NOT set. Returns false if the value is set.
  * @param {*} value
- * @returns true || false
+ * @returns {boolean}
  */
 exports.isNotSet = function (value) {
     return value === null || typeof value === 'undefined';
+};
+
+/**
+ * Check if value is integer
+ * @param value
+ * @returns {boolean}
+ */
+exports.isInt = function(value) {
+    return !isNaN(value) &&
+        parseInt(Number(value)) == value &&
+        !isNaN(parseInt(value, 10));
 };
 
 /**
