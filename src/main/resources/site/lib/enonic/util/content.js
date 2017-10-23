@@ -1,7 +1,12 @@
+/////////////////////////////////////////////////////////////////////////
+// Functionality to assist with working with content in XP             //
+/////////////////////////////////////////////////////////////////////////
+
 var libs = {
     portal: require('/lib/xp/portal'),
     content: require('/lib/xp/content')
 };
+
 
 /**
  * Get content by key (path or id)

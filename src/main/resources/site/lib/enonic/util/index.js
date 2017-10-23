@@ -1,15 +1,16 @@
 exports.app = require('./app');
-exports.data = require('./data');
 exports.content = require('./content');
+exports.data = require('./data');
 exports.region = require('./region');
-
+exports.value = require('./value');
+/*
 var _value                  = require('./value');
 exports.isSet               = _value.isSet;
 exports.isNotSet            = _value.isNotSet;
 exports.valueOrEmptyString  = _value.valueOrEmptyString;
 exports.valueOr             = _value.valueOr;
 exports.ifSetPassToFunction = _value.ifSetPassToFunction;
-
+*/
 /**
  * Log data
  * @param {*} data
