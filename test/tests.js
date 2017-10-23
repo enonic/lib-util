@@ -1,4 +1,4 @@
-var assert = require('testing');
+var assert = require('assert');
 
 var _value              = require('../src/main/resources/site/lib/enonic/util/value.js');
 var isSet               = _value.isSet;
