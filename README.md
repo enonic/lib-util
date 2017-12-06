@@ -20,7 +20,7 @@ Please contribute!
     }
 
     dependencies {
-        include 'com.enonic.lib:util:1.2.1'
+        include 'com.enonic.lib:util:1.2.2'
     }
 
 ### Controllers (3 & 4)
@@ -46,6 +46,10 @@ Refer to each js-file in /lib/enonic/util/ on GitHub for documentation on each f
 | 1.0.0 | 6.0.0 |
 
 ## Changelog
+
+### 1.2.2
+
+* Fixed library build.
 
 ### 1.2.1
 
