@@ -41,11 +41,16 @@ Refer to each js-file in /lib/enonic/util/ on GitHub for documentation on each f
 
 | Lib version | XP version |
 | ----------- | ---------- |
+| 1.3.x | 6.3.1 |
 | 1.2.x | 6.3.1 |
 | 1.1.x | 6.3.1 |
 | 1.0.0 | 6.0.0 |
 
 ## Changelog
+
+### 1.3.0
+
+* Added value.isObject, value.isString, object.hasProperty and object.dlv
 
 ### 1.2.2
 
