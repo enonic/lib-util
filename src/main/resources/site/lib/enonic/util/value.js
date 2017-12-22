@@ -3,6 +3,27 @@
 /////////////////////////////////////////////////////////////////////////
 
 /**
+ * Returns true if the value is an object. Otherwise false.
+ * Note that array and function is an object.
+ * @param {*} value
+ * @returns {boolean}
+ */
+exports.isObject = function (value) {
+  return value === Object(value);
+};
+
+
+/**
+ * Returns true if the value is a string. Otherwise false.
+ * @param {*} value
+ * @returns {boolean}
+ */
+exports.isString = function (value) {
+  return typeof value === 'string' || value instanceof String;
+};
+
+
+/**
  * Returns true if a value is set. Returns false if the value is NOT set.
  * @param {*} value
  * @returns {boolean}
