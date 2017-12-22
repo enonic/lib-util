@@ -1,3 +1,4 @@
+exports.A_FUNCTION = function() {};
 exports.NOW = new Date();
 
 exports.OBJ = {
@@ -15,6 +16,7 @@ exports.OBJ = {
   int: 42,
   string: 'foo',
   dateObj: exports.NOW,
+  fn: exports.A_FUNCTION,
   negInt: -42,
   float: 3.14,
   negFloat: -3.14,

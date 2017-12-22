@@ -7,8 +7,11 @@ var ok              = _assert.ok;
 var throws          = _assert.throws;
 
 var dlv             = _object.dlv;
-var NOW = _testdata.NOW;
-var OBJ = _testdata.OBJ;
+
+var A_FUNCTION = _testdata.A_FUNCTION
+var NOW        = _testdata.NOW;
+var OBJ        = _testdata.OBJ;
+
 
 describe('object', function() {
   describe('dlv', function() {
@@ -37,6 +40,7 @@ describe('object', function() {
       deepStrictEqual(dlv(OBJ, 'int'), 42);
       deepStrictEqual(dlv(OBJ, 'string'), 'foo');
       deepStrictEqual(dlv(OBJ, 'dateObj'), NOW);
+      deepStrictEqual(dlv(OBJ, 'fn'), A_FUNCTION);
       deepStrictEqual(dlv(OBJ, 'true'), true);
       deepStrictEqual(dlv(OBJ, 'negInt'), -42);
       deepStrictEqual(dlv(OBJ, 'float'), 3.14);
@@ -50,6 +54,7 @@ describe('object', function() {
       deepStrictEqual(dlv(OBJ, 'int', 'fallback'), 42);
       deepStrictEqual(dlv(OBJ, 'string', 'fallback'), 'foo');
       deepStrictEqual(dlv(OBJ, 'dateObj', 'fallback'), NOW);
+      deepStrictEqual(dlv(OBJ, 'fn', 'fallback'), A_FUNCTION);
       deepStrictEqual(dlv(OBJ, 'true', 'fallback'), true);
       deepStrictEqual(dlv(OBJ, 'negInt', 'fallback'), -42);
       deepStrictEqual(dlv(OBJ, 'float', 'fallback'), 3.14);
