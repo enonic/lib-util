@@ -8,8 +8,10 @@ var ok              = _assert.ok;
 var throws          = _assert.throws;
 
 var hasProperty     = _object.hasProperty;
-var NOW = _testdata.NOW;
-var OBJ = _testdata.OBJ;
+
+var A_FUNCTION = _testdata.A_FUNCTION
+var NOW        = _testdata.NOW;
+var OBJ        = _testdata.OBJ;
 
 
 describe('object', function() {
@@ -23,6 +25,7 @@ describe('object', function() {
       throws(function() {hasProperty(42)});
       throws(function() {hasProperty('foo')});
       throws(function() {hasProperty(new Date())});
+      throws(function() {hasProperty(A_FUNCTION)});
       throws(function() {hasProperty(-42)});
       throws(function() {hasProperty(3.14)});
       throws(function() {hasProperty(-3.14)});
@@ -40,9 +43,10 @@ describe('object', function() {
       throws(function() {hasProperty(undefined, 'string')});
       throws(function() {hasProperty(true, 'string')});
       doesNotThrow(function() {hasProperty({}, 'string')});
-      throws(function() {hasProperty([], 'string')});
+      doesNotThrow(function() {hasProperty([], 'string')});
       throws(function() {hasProperty(42, 'string')});
       doesNotThrow(function() {hasProperty(new Date(), 'string')});
+      doesNotThrow(function() {hasProperty(A_FUNCTION, 'string')});
       throws(function() {hasProperty('foo', 'string')});
       throws(function() {hasProperty(-42, 'string')});
       throws(function() {hasProperty(3.14, 'string')});
@@ -65,6 +69,7 @@ describe('object', function() {
       throws(function() {hasProperty(OBJ, [])});
       throws(function() {hasProperty(OBJ, 42)});
       throws(function() {hasProperty(OBJ, new Date())});
+      throws(function() {hasProperty(OBJ, A_FUNCTION)});
       throws(function() {hasProperty(OBJ, -42)});
       throws(function() {hasProperty(OBJ, 3.14)});
       throws(function() {hasProperty(OBJ, -3.14)});
@@ -89,6 +94,7 @@ describe('object', function() {
       deepStrictEqual(hasProperty(OBJ, 'int'), true);
       deepStrictEqual(hasProperty(OBJ, 'string'), true);
       deepStrictEqual(hasProperty(OBJ, 'dateObj'), true);
+      deepStrictEqual(hasProperty(OBJ, 'fn'), true);
       deepStrictEqual(hasProperty(OBJ, 'negInt'), true);
       deepStrictEqual(hasProperty(OBJ, 'float'), true);
       deepStrictEqual(hasProperty(OBJ, 'negFloat'), true);
