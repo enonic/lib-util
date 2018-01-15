@@ -20,7 +20,7 @@ Please contribute!
     }
 
     dependencies {
-        include 'com.enonic.lib:util:1.2.2'
+        include 'com.enonic.lib:util:1.3.0'
     }
 
 ### Controllers (3 & 4)
