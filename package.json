@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "mocha": "^3.1.2"
+    "mocha": "^5.2.0"
   },
   "private": true,
   "scripts": {
