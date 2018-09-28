@@ -1,14 +1,17 @@
 buildscript {
-    repositories {
-        jcenter()
-        maven {
-            url 'http://repo.enonic.com/public'
-        }
-    }
+	repositories {
+		jcenter()
+		maven {
+			url 'https://plugins.gradle.org/m2/'
+		}
+		maven {
+			url 'http://repo.enonic.com/public'
+		}
+	}
 
-    dependencies {
-        classpath 'com.enonic.gradle:gradle-defaults:1.0.1'
-    }
+	dependencies {
+		classpath 'gradle.plugin.com.enonic.gradle:gradle-defaults:2.0.0'
+	}
 }
 
 apply plugin: 'java'
@@ -16,14 +19,21 @@ apply plugin: 'com.enonic.defaults'
 apply plugin: 'maven'
 
 repositories {
-    mavenLocal()
-    jcenter()
-    maven {
-        url 'http://repo.enonic.com/public'
-    }
+	mavenLocal()
+	jcenter()
+	maven {
+		url 'https://plugins.gradle.org/m2/'
+	}
+	maven {
+		url 'http://repo.enonic.com/public'
+	}
 }
 
 dependencies {
-    compile "com.enonic.xp:lib-content:${xpVersion}"
-    compile "com.enonic.xp:lib-portal:${xpVersion}"
+	compile "com.enonic.xp:lib-content:${xpVersion}"
+	compile "com.enonic.xp:lib-portal:${xpVersion}"
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '4.10.2'
 }
