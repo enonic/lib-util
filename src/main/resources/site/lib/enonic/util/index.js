@@ -3,6 +3,7 @@ exports.content = require('./content');
 exports.data = require('./data');
 exports.region = require('./region');
 exports.value = require('./value');
+exports.object = require('./object');
 /*
 var _value                  = require('./value');
 exports.isSet               = _value.isSet;
