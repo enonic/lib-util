@@ -1,37 +1,17 @@
-buildscript {
-	repositories {
-		jcenter()
-		maven {
-			url 'https://plugins.gradle.org/m2/'
-		}
-		maven {
-			url 'http://repo.enonic.com/public'
-		}
-	}
-
-	dependencies {
-		classpath 'gradle.plugin.com.enonic.gradle:gradle-defaults:2.0.0'
-	}
-}
-
-apply plugin: 'java'
-apply plugin: 'com.enonic.defaults'
-apply plugin: 'maven'
-
-repositories {
-	mavenLocal()
-	jcenter()
-	maven {
-		url 'https://plugins.gradle.org/m2/'
-	}
-	maven {
-		url 'http://repo.enonic.com/public'
-	}
+plugins {
+	id 'java' // Needed for libs building without xp.apps plugin
+	id 'maven' // Needed for uploadArchives to work locally
+	id 'com.enonic.defaults' version '1.0.3'
 }
 
 dependencies {
 	compile "com.enonic.xp:lib-content:${xpVersion}"
 	compile "com.enonic.xp:lib-portal:${xpVersion}"
+}
+
+repositories {
+	mavenLocal()
+	jcenter()
 }
 
 task wrapper(type: Wrapper) {
