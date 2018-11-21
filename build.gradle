@@ -1,6 +1,7 @@
 plugins {
 	id 'java' // Needed for libs building without xp.apps plugin
 	id 'maven' // Needed for uploadArchives to work locally
+	id 'maven-publish' // Provides publishToMavenLocal
 	id 'com.enonic.defaults' version '2.0.0'
 	id 'com.moowork.node' version '1.2.0'
 }

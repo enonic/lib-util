@@ -16,6 +16,7 @@
     "build": "babel --env-name production -d build/resources/main src/main/resources;",
     "mocha": "./node_modules/.bin/mocha",
     "pretest": "npm run build;",
+    "publishToMavenLocal": "./gradlew publishToMavenLocal",
     "test": "./node_modules/.bin/mocha test/*.test.js test/**/*.test.js",
     "watch": "babel --env-name production -w -d build/resources/main src/main/resources;"
   }
