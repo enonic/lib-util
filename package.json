@@ -1,11 +1,19 @@
 {
   "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-object-assign": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "babel-plugin-array-includes": "^2.0.3",
     "mocha": "^5.2.0"
   },
   "private": true,
   "scripts": {
+    "build": "babel --env-name production -d build/resources/main src/main/resources;",
     "mocha": "./node_modules/.bin/mocha",
-    "test": "./node_modules/.bin/mocha test/*.test.js test/**/*.test.js"
-  },
-  "version": "1.3.0"
+    "pretest": "npm run build;",
+    "test": "./node_modules/.bin/mocha test/*.test.js test/**/*.test.js",
+    "watch": "babel --env-name production -w -d build/resources/main src/main/resources;"
+  }
 }
