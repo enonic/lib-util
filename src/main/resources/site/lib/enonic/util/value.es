@@ -8,9 +8,7 @@
  * @param {*} value
  * @returns {boolean}
  */
-exports.isObject = function (value) {
-  return value === Object(value);
-};
+export const isObject = value => value === Object(value);
 
 
 /**
@@ -18,9 +16,7 @@ exports.isObject = function (value) {
  * @param {*} value
  * @returns {boolean}
  */
-exports.isString = function (value) {
-  return typeof value === 'string' || value instanceof String;
-};
+export const isString = value => typeof value === 'string' || value instanceof String;
 
 
 /**
@@ -28,30 +24,32 @@ exports.isString = function (value) {
  * @param {*} value
  * @returns {boolean}
  */
-exports.isSet = function (value) {
-    if (typeof value === 'boolean') { return true } // If value is true/false it is set
-    return value !== null && typeof value !== 'undefined';
-};
+export function isSet(value) {
+	if (typeof value === 'boolean') { return true; } // If value is true/false it is set
+	return value !== null && typeof value !== 'undefined';
+}
+
 
 /**
  * Returns true if a value is NOT set. Returns false if the value is set.
  * @param {*} value
  * @returns {boolean}
  */
-exports.isNotSet = function (value) {
-    return value === null || typeof value === 'undefined';
-};
+export const isNotSet = value => value === null || typeof value === 'undefined';
 
+
+/* eslint-disable no-restricted-globals */
 /**
  * Check if value is integer
  * @param value
  * @returns {boolean}
  */
-exports.isInt = function(value) {
-    return !isNaN(value) &&
-        parseInt(Number(value)) == value &&
-        !isNaN(parseInt(value, 10));
-};
+export function isInt(value) {
+	return !isNaN(value)
+		&& parseInt(Number(value), 10) === value
+		&& !isNaN(parseInt(value, 10));
+}
+/* eslint-enable no-restricted-globals */
 
 
 /**
@@ -69,9 +67,8 @@ export const toStr = (value, replacer = null, space = 4) => JSON.stringify(value
  * @param {*} value
  * @returns value || ''
  */
-exports.valueOrEmptyString = function (value) {
-    return exports.isSet(value) ? value : '';
-};
+export const valueOrEmptyString = value => isSet(value) ? value : '';
+
 
 /**
  * Returns the value1 if the value1 is set. Otherwise returns value2.
@@ -79,10 +76,11 @@ exports.valueOrEmptyString = function (value) {
  * @param {*} value2
  * @returns value || ''
  */
-exports.valueOr = function (value1, value2) {
-    if(arguments.length < 2) { throw new Error('valueOr requires two parameters!'); }
-    return exports.isSet(value1) ? value1 : value2;
-};
+export function valueOr(value1, value2) {
+	if (arguments.length < 2) { throw new Error('valueOr requires two parameters!'); }
+	return isSet(value1) ? value1 : value2;
+}
+
 
 /**
  * If the value is set: execute the function expression with value as the first
@@ -92,10 +90,11 @@ exports.valueOr = function (value1, value2) {
  * @param {function} fn
  * @returns * || undefined
  */
-exports.ifSetPassToFunction = function (value, fn) {
-    if(arguments.length < 2) { throw new Error('ifSetPassToFunction requires two parameters!'); }
-    if(typeof fn !== 'function') { throw new Error('ifSetPassToFunction second parameter need to be of type function!'); }
-    if (exports.isSet(value)) {
-        return fn(value);
-    }
-};
+export function ifSetPassToFunction(value, fn) {
+	if (arguments.length < 2) { throw new Error('ifSetPassToFunction requires two parameters!'); }
+	if (typeof fn !== 'function') { throw new Error('ifSetPassToFunction second parameter need to be of type function!'); }
+	if (exports.isSet(value)) {
+		return fn(value);
+	}
+	return undefined;
+}

@@ -1,8 +1,20 @@
+/*import value, {
+	/*
+	isNotSet,
+	isSet,
+	ifSetPassToFunction,
+	*/
+/*	toStr/*,
+	valueOr,
+	valueOrEmptyString*/
+//} from '/lib/enonic/util/value';
+
 export {default as app} from '/lib/enonic/util/app';
 export {default as content} from '/lib/enonic/util/content';
 export {default as data} from '/lib/enonic/util/data';
-export {default as region} from '/lib/enonic/util/region';
 export {default as object} from '/lib/enonic/util/object';
+export {default as region} from '/lib/enonic/util/region';
+//export {toStr, value};
 export {
 	/*
 	isNotSet,

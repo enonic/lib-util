@@ -46,6 +46,14 @@ module.exports = {
 		'object-curly-spacing': ['off'],
 		'import/prefer-default-export': ['off'],
 		'spaced-comment': ['off']
+	},
+
+	settings: {
+		'import/resolver': {
+			node: {
+				extensions: ['.es', '.js']
+			}
+		}
 	}
 
 }; // exports
