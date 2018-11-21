@@ -19,4 +19,4 @@ export {
  * Log data
  * @param {*} data
  */
-export const log = data => log.info('UTIL log %s', JSON.stringify(data, null, 4));
+exports.log = data => log.info('UTIL log %s', JSON.stringify(data, null, 4));
