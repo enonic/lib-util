@@ -1,7 +1,7 @@
 //──────────────────────────────────────────────────────────────────────────────
 // Functionality to assist with working with content in XP
 //──────────────────────────────────────────────────────────────────────────────
-import {toStr} from '/lib/enonic/util/value';
+import {toStr} from './value';
 import {get as getContentByKey} from '/lib/xp/content';
 import {getContent as getCurrentContent} from '/lib/xp/portal';
 

@@ -1,31 +1,17 @@
-/*import value, {
-	/*
-	isNotSet,
-	isSet,
-	ifSetPassToFunction,
-	*/
-/*	toStr/*,
-	valueOr,
-	valueOrEmptyString*/
-//} from '/lib/enonic/util/value';
+//export {default as data} from './data'; // Does NOT work
+//const app = require('./app'); // Works
+//import app from './app'; // Does NOT work
+//import {default as app} from './app'; // Does NOT work
 
-export {default as app} from '/lib/enonic/util/app';
-export {default as content} from '/lib/enonic/util/content';
-export {default as data} from '/lib/enonic/util/data';
-export {default as object} from '/lib/enonic/util/object';
-export {default as region} from '/lib/enonic/util/region';
-//export {toStr, value};
-export {
-	/*
-	isNotSet,
-	isSet,
-	ifSetPassToFunction,
-	*/
-	toStr,
-	default as value/*,
-	valueOr,
-	valueOrEmptyString*/
-} from '/lib/enonic/util/value';
+// So lets stick to old syntax since new doesn't work
+exports.app = require('./app');
+exports.content = require('./content');
+exports.data = require('./data');
+exports.object = require('./object');
+exports.region = require('./region');
+exports.value = require('./value');
+
+exports.toStr = exports.value.toStr;
 
 /**
  * Log data
