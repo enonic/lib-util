@@ -60,10 +60,10 @@ describe('content', () => {
 
 		it('get works', () => deepStrictEqual(A_CONTENT, get()));
 
-		it('getParent() --> undefined', () => deepStrictEqual(undefined, getParent()));
-		it('getParent({key: UUID}) --> undefined', () => deepStrictEqual(undefined, getParent({key: UUID})));
-		it('getParent({key: PATH}) --> undefined', () => deepStrictEqual(undefined, getParent({key: PATH})));
-		it('getParent({content: A_CONTENT}) --> undefined', () => deepStrictEqual(undefined, getParent({content: A_CONTENT})));
+		it('getParent() --> null', () => deepStrictEqual(null, getParent()));
+		it('getParent({key: UUID}) --> null', () => deepStrictEqual(null, getParent({key: UUID})));
+		it('getParent({key: PATH}) --> null', () => deepStrictEqual(null, getParent({key: PATH})));
+		it('getParent({content: A_CONTENT}) --> null', () => deepStrictEqual(null, getParent({content: A_CONTENT})));
 		it('getParent({key: CHILD_ID}) --> A_CONTENT', () => deepStrictEqual(A_CONTENT, getParent({key: CHILD_ID})));
 		it('getParent({key: CHILD_PATH}) --> A_CONTENT', () => deepStrictEqual(A_CONTENT, getParent({key: CHILD_PATH})));
 		it('getParent({content: CHILD_CONTENT}) --> A_CONTENT', () => deepStrictEqual(A_CONTENT, getParent({content: CHILD_CONTENT})));

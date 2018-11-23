@@ -40,6 +40,7 @@ export function getParent({
 		throw new Error(`getParent() was unable to get content with key:${key} branch:${branch} nor currentContent!`);
 	}
 	const parentPath = content._path.replace(/^(.*?)\/[^/]+$/, '$1'); log.debug(toStr({parentPath}));
+	if (!parentPath) { return null; }
 	const parent = getContentByKey({key: parentPath, branch}); log.debug(toStr({parent, type: typeof parent}));
 	return parent;
 }
