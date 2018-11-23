@@ -3,8 +3,9 @@
 /////////////////////////////////////////////////////////////////////////
 
 // For backwards compatibility:
-import {isInt, isSet} from './value';
+import libValue from './value';
 
+export const {isInt, isSet} = libValue;
 
 /**
  * Force data to array
