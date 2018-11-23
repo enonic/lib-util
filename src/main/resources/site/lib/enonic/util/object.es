@@ -40,3 +40,9 @@ export function hasProperty(object, property) {
 	return true;
 }
 // End License MIT
+
+
+export default {
+	dlv,
+	hasProperty
+};

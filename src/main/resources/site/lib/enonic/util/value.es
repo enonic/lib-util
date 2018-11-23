@@ -98,3 +98,16 @@ export function ifSetPassToFunction(value, fn) {
 	}
 	return undefined;
 }
+
+
+export default {
+	ifSetPassToFunction,
+	isNotSet,
+	isInt,
+	isObject,
+	isSet,
+	isString,
+	toStr,
+	valueOr,
+	valueOrEmptyString
+};

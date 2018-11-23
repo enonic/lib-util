@@ -1,5 +1,6 @@
 /* global describe it */
 /* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-eval */
 import proxyquire from 'proxyquire';
 import {deepStrictEqual} from 'assert';
 
@@ -48,44 +49,55 @@ const {
 } = value;
 
 describe('index', () => {
-	it('exports the correct things', () => {
-		deepStrictEqual('function', typeof log);
-		deepStrictEqual('function', typeof toStr);
+	describe('export', () => {
+		[
+			'app',
+			'content',
+			'data',
+			'object',
+			'region',
+			'value'
+		].forEach((v) => {
+			it(`${v} is a object`, () => { deepStrictEqual('object', typeof eval(v)); });
+		});
 
-		deepStrictEqual('object', typeof app);
-		deepStrictEqual('function', typeof get);
-		deepStrictEqual('function', typeof exists);
-		deepStrictEqual('function', typeof getParent);
-		deepStrictEqual('function', typeof getPath);
-		deepStrictEqual('function', typeof getProperty);
+		[
+			'log',
+			'toStr',
 
-		deepStrictEqual('object', typeof content);
-		deepStrictEqual('function', typeof getShortName);
-		deepStrictEqual('function', typeof getJsonName);
+			'app.getJsonName',
+			'app.getShortName',
+			'getJsonName',
+			'getShortName',
 
-		deepStrictEqual('object', typeof data);
-		deepStrictEqual('function', typeof dataIsSet);
-		deepStrictEqual('function', typeof dataIsInt);
-		deepStrictEqual('function', typeof forceArray);
-		deepStrictEqual('function', typeof trimArray);
-		deepStrictEqual('function', typeof deleteEmptyProperties);
+			'get',
+			'exists',
+			'getParent',
+			'getPath',
+			'getProperty',
 
-		deepStrictEqual('object', typeof object);
-		deepStrictEqual('function', typeof dlv);
-		deepStrictEqual('function', typeof hasProperty);
+			'dataIsInt',
+			'dataIsSet',
+			'deleteEmptyProperties',
+			'forceArray',
+			'trimArray',
 
-		deepStrictEqual('object', typeof region);
-		deepStrictEqual('function', typeof getRegion);
+			'dlv',
+			'hasProperty',
 
-		deepStrictEqual('object', typeof value);
-		deepStrictEqual('function', typeof isObject);
-		deepStrictEqual('function', typeof isString);
-		deepStrictEqual('function', typeof isSet);
-		deepStrictEqual('function', typeof isNotSet);
-		deepStrictEqual('function', typeof isInt);
-		deepStrictEqual('function', typeof valueToStr);
-		deepStrictEqual('function', typeof valueOrEmptyString);
-		deepStrictEqual('function', typeof valueOr);
-		deepStrictEqual('function', typeof ifSetPassToFunction);
+			'getRegion',
+
+			'isObject',
+			'isString',
+			'isSet',
+			'isNotSet',
+			'isInt',
+			'valueToStr',
+			'valueOrEmptyString',
+			'valueOr',
+			'ifSetPassToFunction'
+		].forEach((v) => {
+			it(`${v} is a function`, () => { deepStrictEqual('function', typeof eval(v)); });
+		});
 	});
 });

@@ -1,20 +1,34 @@
-//export {default as data} from './data'; // Does NOT work
-//const app = require('./app'); // Works
-//import app from './app'; // Does NOT work
-//import {default as app} from './app'; // Does NOT work
+import libApp from './app';
+import libContent from './content';
+import libData from './data';
+import libObject from './object';
+import libRegion from './region';
+import libValue from './value';
 
-// So lets stick to old syntax since new doesn't work
-exports.app = require('./app');
-exports.content = require('./content');
-exports.data = require('./data');
-exports.object = require('./object');
-exports.region = require('./region');
-exports.value = require('./value');
+export const app = libApp;
+export const content = libContent;
+export const data = libData;
+export const object = libObject;
+export const region = libRegion;
+export const value = libValue;
 
-exports.toStr = exports.value.toStr;
+export const {toStr} = libValue;
+
 
 /**
  * Log data
  * @param {*} data
  */
-exports.log = data => log.info('UTIL log %s', JSON.stringify(data, null, 4));
+export const log = d => log.info('UTIL log %s', JSON.stringify(d, null, 4));
+
+
+export default {
+	app,
+	content,
+	data,
+	log,
+	object,
+	region,
+	toStr,
+	value
+};

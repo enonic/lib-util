@@ -18,7 +18,7 @@ export const get = key => typeof key === 'undefined' ? getCurrentContent() : get
  * @param {string} path
  * @returns {boolean}
  */
-export const exists = path => !!get(path);
+export const exists = path => !!getContentByKey({key: path});
 
 
 /**
@@ -33,9 +33,14 @@ export function getParent({
 	key,
 	content = key ? getContentByKey({key, branch}) : getCurrentContent()
 } = {}) {
-	log.debug(toStr({branch, key, content}));
-	const parentPath = content._path.replace(/(.*?)\/[^/]+/, '$1'); log.debug(toStr({parentPath}));
-	const parent = getContentByKey({key: parentPath, branch}); log.debug(toStr({parent}));
+	log.debug(toStr({
+		branch, key, content, typeOfContent: typeof content
+	}));
+	if (!content) {
+		throw new Error(`getParent() was unable to get content with key:${key} branch:${branch} nor currentContent!`);
+	}
+	const parentPath = content._path.replace(/^(.*?)\/[^/]+$/, '$1'); log.debug(toStr({parentPath}));
+	const parent = getContentByKey({key: parentPath, branch}); log.debug(toStr({parent, type: typeof parent}));
 	return parent;
 }
 
@@ -68,3 +73,12 @@ export function getProperty(key, property) {
 	const result = get(key);
 	return result ? result[property] : null;
 }
+
+
+export default {
+	exists,
+	get,
+	getPath,
+	getParent,
+	getProperty
+};

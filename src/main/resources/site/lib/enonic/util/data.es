@@ -3,10 +3,7 @@
 /////////////////////////////////////////////////////////////////////////
 
 // For backwards compatibility:
-import {isSet} from './value';
-
-export {isSet};
-export {isInt} from './value';
+import {isInt, isSet} from './value';
 
 
 /**
@@ -68,3 +65,12 @@ export function deleteEmptyProperties(obj, recursive = false) {
 	});
 	//return obj;
 }
+
+
+export default {
+	deleteEmptyProperties,
+	forceArray,
+	isInt, // For backwards compatibility
+	isSet, // For backwards compatibility:
+	trimArray
+};

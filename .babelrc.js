@@ -8,15 +8,16 @@ module.exports = {
 		}
 	},
 	plugins: [
-		'array-includes',
 		'@babel/plugin-proposal-object-rest-spread',
-		'@babel/plugin-transform-object-assign'
+		'@babel/plugin-transform-modules-commonjs',
+		'@babel/plugin-transform-object-assign',
+		'array-includes'
 	],
 	presets: [
 		[
 			'@babel/preset-env',
 			{
-				useBuiltIns: false
+				modules: 'commonjs', // This is what Enonic XP is supporting.
 			}
 		]
 	]
