@@ -2,6 +2,7 @@ import libApp from './app';
 import libContent from './content';
 import libData from './data';
 import libObject from './object';
+import libPortal from './portal';
 import libRegion from './region';
 import libValue from './value';
 
@@ -9,6 +10,7 @@ export const app = libApp;
 export const content = libContent;
 export const data = libData;
 export const object = libObject;
+export const portal = libPortal;
 export const region = libRegion;
 export const value = libValue;
 
@@ -29,6 +31,7 @@ export default {
 	data,
 	log: exports.log,
 	object,
+	portal,
 	region,
 	toStr,
 	value

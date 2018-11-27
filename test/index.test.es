@@ -6,57 +6,81 @@ import {deepStrictEqual} from 'assert';
 
 const proxyquireStrict = proxyquire.noCallThru();
 
-const libXpPortalStub = {};
+const fakeAdmin = {};
+const fakePortal = {};
+const fakeContent = {};
 
-const content = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content', {
-	'/lib/xp/content': {},
-	'/lib/xp/portal': libXpPortalStub
+const libGetParent = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content/getParent', {
+	'/lib/xp/content': fakeContent,
+	'/lib/xp/portal': fakePortal
 });
-//console.log('content:', content);
+//console.log('libGetParent:', libGetParent);
 
-const region = proxyquireStrict('../build/resources/main/site/lib/enonic/util/region', {
-	'/lib/xp/portal': libXpPortalStub
+const libGetLocale = proxyquireStrict('../build/resources/main/site/lib/enonic/util/portal/getLocale', {
+	'/lib/xp/admin': fakeAdmin,
+	'/lib/xp/content': fakeContent,
+	'/lib/xp/portal': fakePortal,
+	'../content/getParent': libGetParent
 });
-//console.log('region:', region);
+//console.log('libGetLocale:', libGetLocale);
+
+const libPortal = proxyquireStrict('../build/resources/main/site/lib/enonic/util/portal', {
+	'./getLocale': libGetLocale
+});
+//console.log('libPortal:', libPortal);
+
+const libContent = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content', {
+	'/lib/xp/content': fakeContent,
+	'/lib/xp/portal': fakePortal,
+	'./content/getParent': libGetParent
+});
+//console.log('libContent:', libContent);
+
+const libRegion = proxyquireStrict('../build/resources/main/site/lib/enonic/util/region', {
+	'/lib/xp/portal': fakePortal
+});
+//console.log('libRegion:', libRegion);
 
 
 const index = proxyquireStrict('../build/resources/main/site/lib/enonic/util/index', {
-	'./content': content,
-	'./region': region
+	'./content': libContent,
+	'./portal': libPortal,
+	'./region': libRegion
 });
 //console.log('index:', index);
 
+
+/* eslint-disable no-unused-vars */
 const {
-	app,
-	data,
-	object,
+	app: {getShortName, getJsonName},
+	data: {
+		isSet: dataIsSet, isInt: dataIsInt, forceArray, trimArray, deleteEmptyProperties
+	},
+	content: {
+		get, exists, getParent, getPath, getProperty
+	},
+	object: {dlv, hasProperty},
+	portal: {getLocale},
 	toStr,
-	value,
+	region: {get: getRegion},
+	value: {
+		isObject, isString, isSet, isNotSet, isInt, valueOrEmptyString, valueOr, ifSetPassToFunction
+	},
 	log
 } = index;
+/* eslint-enable no-unused-vars */
 
-const {getShortName, getJsonName} = app;
-const {
-	get, exists, getParent, getPath, getProperty
-} = content;
-const {
-	isSet: dataIsSet, isInt: dataIsInt, forceArray, trimArray, deleteEmptyProperties
-} = data;
-const {dlv, hasProperty} = object;
-const {get: getRegion} = region;
-const {
-	isObject, isString, isSet, isNotSet, isInt, toStr: valueToStr, valueOrEmptyString, valueOr, ifSetPassToFunction
-} = value;
 
 describe('index', () => {
 	describe('export', () => {
 		[
-			'app',
-			'content',
-			'data',
-			'object',
-			'region',
-			'value'
+			'index.app',
+			'index.content',
+			'index.data',
+			'index.object',
+			'index.portal',
+			'index.region',
+			'index.value'
 		].forEach((v) => {
 			it(`${v} is a object`, () => { deepStrictEqual('object', typeof eval(v)); });
 		});
@@ -65,8 +89,6 @@ describe('index', () => {
 			'log',
 			'toStr',
 
-			'app.getJsonName',
-			'app.getShortName',
 			'getJsonName',
 			'getShortName',
 
@@ -85,6 +107,8 @@ describe('index', () => {
 			'dlv',
 			'hasProperty',
 
+			'getLocale',
+
 			'getRegion',
 
 			'isObject',
@@ -92,7 +116,6 @@ describe('index', () => {
 			'isSet',
 			'isNotSet',
 			'isInt',
-			'valueToStr',
 			'valueOrEmptyString',
 			'valueOr',
 			'ifSetPassToFunction'

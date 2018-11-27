@@ -14,9 +14,16 @@ import {
 import fakeContent from './fake/content';
 import fakePortal from './fake/portal';
 
-const content = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content', {
+
+const libGetParent = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content/getParent', {
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal
+});
+
+const content = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content', {
+	'/lib/xp/content': fakeContent,
+	'/lib/xp/portal': fakePortal,
+	'./content/getParent': libGetParent
 });
 
 const {

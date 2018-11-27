@@ -14,3 +14,8 @@ export const get = () => {
 	const values = Object.values(regions); log.debug({values});
 	return values;
 };
+
+
+export default {
+	get
+};

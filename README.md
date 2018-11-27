@@ -49,6 +49,7 @@ Refer to each js-file in /lib/enonic/util/ on GitHub for documentation on each f
 ### 1.4.0
 
 * Added content.getParent
+* Added portal.getLocale
 * Source rewritten in ES.next
 * Added many tests with global.app, global.log and libXpContent and libXpPortal fakes.
 
