@@ -28,7 +28,7 @@ export function getLocale({
 	log.debug(toStr({parent}));
 	while (parent) {
 		if (parent.language) { return parent.language; }
-		parent = getParent({content});
+		parent = getParent({content: parent});
 		log.debug(toStr({parent}));
 	}
 	/*if (acceptLanguage) { // adminGetLocale already does this?

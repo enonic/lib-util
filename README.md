@@ -41,7 +41,8 @@ Refer to each js-file in /lib/enonic/util/ on GitHub for documentation on each f
 
 | Lib version | XP version |
 | ----------- | ---------- |
-| 1.[1-4].x | 6.3.1 |
+| 1.4.x | 6.14.0 |
+| 1.[1-3].x | 6.3.1 |
 | 1.0.0 | 6.0.0 |
 
 ## Changelog
@@ -51,7 +52,8 @@ Refer to each js-file in /lib/enonic/util/ on GitHub for documentation on each f
 * Added content.getParent
 * Added portal.getLocale
 * Source rewritten in ES.next
-* Added many tests with global.app, global.log and libXpContent and libXpPortal fakes.
+* Added many tests with global.app, global.log and libXpContent and libXpPortal fakes
+* Upgraded required version of Enonic XP to 6.14.0, since there is no lib-admin-6.3.1
 
 ### 1.3.0
 
