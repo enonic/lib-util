@@ -9,9 +9,12 @@ import {deepStrictEqual} from 'assert';
 const proxyquireStrict = proxyquire.noCallThru();
 
 import {
-	A_CONTENT, CHILD_ID, CHILD_PATH, CHILD_CONTENT, NAME, PATH, UUID // eslint-disable-line no-unused-vars
+	A_CONTENT,
+	DISPLAY_NAME, DATA,
+	CHILD_ID, CHILD_PATH, CHILD_CONTENT, NAME, PATH, UUID // eslint-disable-line no-unused-vars
 } from './fake/constants';
 import fakeContent from './fake/content';
+import {Log, LogWarnings} from './fake/log'; // eslint-disable-line no-unused-vars
 import fakePortal from './fake/portal';
 
 
@@ -20,23 +23,26 @@ const libGetParent = proxyquireStrict('../build/resources/main/site/lib/enonic/u
 	'/lib/xp/portal': fakePortal
 });
 
+const libGetTree = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content/getTree', {
+	'/lib/xp/content': fakeContent,
+	'/lib/xp/portal': fakePortal
+});
+
 const content = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content', {
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal,
-	'./content/getParent': libGetParent
+	'./content/getParent': libGetParent,
+	'./content/getTree': libGetTree
 });
 
 const {
-	exists, get, getPath, getParent, getProperty
+	exists, get, getPath, getParent, getProperty, getTree
 } = content;
 //console.log('content:', content);
 
 describe('content', () => {
 	before(() => {
-		global.log = {
-			debug: () => {}, //console.log,
-			info: () => {} //console.log
-		};
+		global.log = LogWarnings;
 	});
 	after(() => {
 		delete global.log;
@@ -54,7 +60,8 @@ describe('content', () => {
 			'get',
 			'getPath',
 			'getParent',
-			'getProperty'
+			'getProperty',
+			'getTree'
 		].forEach((v) => {
 			it(`${v} is a function`, () => { deepStrictEqual('function', typeof eval(v)); });
 		});
@@ -86,5 +93,12 @@ describe('content', () => {
 		it("getProperty(UUID, '_id') --> UUID", () => deepStrictEqual(UUID, getProperty(UUID, '_id')));
 		it("getProperty('non-existant', '_id') --> null", () => deepStrictEqual(null, getProperty('non-existant', '_id')));
 		it("getProperty(UUID, 'non-existant') --> undefined", () => deepStrictEqual(undefined, getProperty(UUID, 'non-existant')));
+
+		it('getTree(levels: 1)', () => deepStrictEqual({
+			content: {
+				displayName: DISPLAY_NAME,
+				data: DATA
+			}
+		}, getTree({levels: 1})));
 	});
 });

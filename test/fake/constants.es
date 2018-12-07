@@ -1,13 +1,21 @@
+export const CT_SITE = 'portal:site';
+
 
 export const UUID = '993f0738-8256-4727-b189-2ee361829310';
 export const NAME = 'site';
 export const PATH = `/${NAME}`;
+export const DISPLAY_NAME = 'Site displayName';
+export const DATA = {};
 export const LANG = undefined;
+export const TYPE = CT_SITE;
 export const A_CONTENT = {
 	_id: UUID,
 	_path: PATH,
 	_name: NAME,
-	language: LANG
+	displayName: DISPLAY_NAME,
+	data: DATA,
+	language: LANG,
+	type: TYPE
 };
 
 

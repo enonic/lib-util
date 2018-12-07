@@ -1,7 +1,11 @@
 /////////////////////////////////////////////////////////////////////////
 // Functionality to help with values (return or check)                 //
 /////////////////////////////////////////////////////////////////////////
+import {isFunction as importedIsFunction} from './value/isFunction';
 import {toStr as importedToStr} from './value/toStr';
+
+
+export const isFunction = importedIsFunction;
 
 
 /**
@@ -97,6 +101,7 @@ export function ifSetPassToFunction(value, fn) {
 
 export default {
 	ifSetPassToFunction,
+	isFunction,
 	isNotSet,
 	isInt,
 	isObject,

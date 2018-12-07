@@ -50,7 +50,9 @@ Refer to each js-file in /lib/enonic/util/ on GitHub for documentation on each f
 ### 1.4.0
 
 * Added content.getParent
+* Added content.getTree
 * Added portal.getLocale
+* Added value.isFunction
 * Source rewritten in ES.next
 * Added many tests with global.app, global.log and libXpContent and libXpPortal fakes
 * Upgraded required version of Enonic XP to 6.14.0, since there is no lib-admin-6.3.1

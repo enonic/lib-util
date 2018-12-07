@@ -2,6 +2,7 @@
 // Functionality to assist with working with content in XP
 //──────────────────────────────────────────────────────────────────────────────
 import {getParent as importedGetParent} from './content/getParent';
+import {getTree as importedGetTree} from './content/getTree';
 import {get as getContentByKey} from '/lib/xp/content';
 import {getContent as getCurrentContent} from '/lib/xp/portal';
 
@@ -55,10 +56,14 @@ export function getProperty(key, property) {
 }
 
 
+export const getTree = importedGetTree;
+
+
 export default {
 	exists,
 	get,
 	getPath,
 	getParent,
-	getProperty
+	getProperty,
+	getTree
 };

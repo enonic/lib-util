@@ -1,5 +1,10 @@
-import {CONTENTS} from './constants';
+import {A_CONTENT, CONTENTS} from './constants';
 
 export default {
-	get: ({key}) => CONTENTS[key]
+	get: ({key}) => CONTENTS[key],
+	query: () => ({
+		count: 1,
+		total: 1,
+		hits: [A_CONTENT]
+	})
 };

@@ -16,6 +16,11 @@ const libGetParent = proxyquireStrict('../build/resources/main/site/lib/enonic/u
 });
 //console.log('libGetParent:', libGetParent);
 
+const libGetTree = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content/getTree', {
+	'/lib/xp/content': fakeContent,
+	'/lib/xp/portal': fakePortal
+});
+
 const libGetLocale = proxyquireStrict('../build/resources/main/site/lib/enonic/util/portal/getLocale', {
 	'/lib/xp/admin': fakeAdmin,
 	'/lib/xp/content': fakeContent,
@@ -32,7 +37,8 @@ const libPortal = proxyquireStrict('../build/resources/main/site/lib/enonic/util
 const libContent = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content', {
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal,
-	'./content/getParent': libGetParent
+	'./content/getParent': libGetParent,
+	'./content/getTree': libGetTree
 });
 //console.log('libContent:', libContent);
 
@@ -57,14 +63,14 @@ const {
 		isSet: dataIsSet, isInt: dataIsInt, forceArray, trimArray, deleteEmptyProperties
 	},
 	content: {
-		get, exists, getParent, getPath, getProperty
+		get, exists, getParent, getPath, getProperty, getTree
 	},
 	object: {dlv, hasProperty},
 	portal: {getLocale},
 	toStr,
 	region: {get: getRegion},
 	value: {
-		isObject, isString, isSet, isNotSet, isInt, valueOrEmptyString, valueOr, ifSetPassToFunction
+		isFunction, isObject, isString, isSet, isNotSet, isInt, valueOrEmptyString, valueOr, ifSetPassToFunction
 	},
 	log
 } = index;
@@ -97,6 +103,7 @@ describe('index', () => {
 			'getParent',
 			'getPath',
 			'getProperty',
+			'getTree',
 
 			'dataIsInt',
 			'dataIsSet',
@@ -111,6 +118,7 @@ describe('index', () => {
 
 			'getRegion',
 
+			'isFunction',
 			'isObject',
 			'isString',
 			'isSet',
