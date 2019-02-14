@@ -28,6 +28,7 @@ task wrapper(type: Wrapper) {
 
 task transpile(type: NpmTask) {
 	args = ['run', 'build']
+	outputs.dir './build/resources/main' // processResources will delete the directory if this is not present
 }
 
 task watch(type: NpmTask) {
@@ -35,8 +36,7 @@ task watch(type: NpmTask) {
 }
 
 processResources {
+	dependsOn transpile
+	mustRunAfter transpile
 	exclude '*'
 }
-
-processResources.mustRunAfter transpile
-processResources.dependsOn transpile
