@@ -19,11 +19,11 @@ import {Log, LogWarnings} from '../fake/log'; // eslint-disable-line no-unused-v
 import fakePortal from '../fake/portal';
 
 
-const {getLocale} = proxyquireStrict('../../build/resources/main/site/lib/enonic/util/portal/getLocale', {
+const {getLocale} = proxyquireStrict('../../build/resources/main/lib/util/portal/getLocale', {
 	'/lib/xp/admin': fakeAdmin,
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal,
-	'../content/getParent': proxyquireStrict('../../build/resources/main/site/lib/enonic/util/content/getParent', {
+	'../content/getParent': proxyquireStrict('../../build/resources/main/lib/util/content/getParent', {
 		'/lib/xp/content': fakeContent,
 		'/lib/xp/portal': fakePortal
 	})

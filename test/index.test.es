@@ -10,18 +10,18 @@ const fakeAdmin = {};
 const fakePortal = {};
 const fakeContent = {};
 
-const libGetParent = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content/getParent', {
+const libGetParent = proxyquireStrict('../build/resources/main/lib/util/content/getParent', {
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal
 });
 //console.log('libGetParent:', libGetParent);
 
-const libGetTree = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content/getTree', {
+const libGetTree = proxyquireStrict('../build/resources/main/lib/util/content/getTree', {
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal
 });
 
-const libGetLocale = proxyquireStrict('../build/resources/main/site/lib/enonic/util/portal/getLocale', {
+const libGetLocale = proxyquireStrict('../build/resources/main/lib/util/portal/getLocale', {
 	'/lib/xp/admin': fakeAdmin,
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal,
@@ -29,12 +29,12 @@ const libGetLocale = proxyquireStrict('../build/resources/main/site/lib/enonic/u
 });
 //console.log('libGetLocale:', libGetLocale);
 
-const libPortal = proxyquireStrict('../build/resources/main/site/lib/enonic/util/portal', {
+const libPortal = proxyquireStrict('../build/resources/main/lib/util/portal', {
 	'./getLocale': libGetLocale
 });
 //console.log('libPortal:', libPortal);
 
-const libContent = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content', {
+const libContent = proxyquireStrict('../build/resources/main/lib/util/content', {
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal,
 	'./content/getParent': libGetParent,
@@ -42,13 +42,13 @@ const libContent = proxyquireStrict('../build/resources/main/site/lib/enonic/uti
 });
 //console.log('libContent:', libContent);
 
-const libRegion = proxyquireStrict('../build/resources/main/site/lib/enonic/util/region', {
+const libRegion = proxyquireStrict('../build/resources/main/lib/util/region', {
 	'/lib/xp/portal': fakePortal
 });
 //console.log('libRegion:', libRegion);
 
 
-const index = proxyquireStrict('../build/resources/main/site/lib/enonic/util/index', {
+const index = proxyquireStrict('../build/resources/main/lib/util/index', {
 	'./content': libContent,
 	'./portal': libPortal,
 	'./region': libRegion

@@ -1,6 +1,6 @@
 var assert = require('assert');
 
-var _value              = require('../build/resources/main/site/lib/enonic/util/value.js');
+var _value              = require('../build/resources/main/lib/util/value.js');
 var isSet               = _value.isSet;
 var isNotSet            = _value.isNotSet;
 var valueOrEmptyString  = _value.valueOrEmptyString;

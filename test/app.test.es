@@ -1,6 +1,6 @@
 /* global describe it before after */
 import {deepStrictEqual} from 'assert';
-import app, {getShortName, getJsonName} from '../build/resources/main/site/lib/enonic/util/app';
+import app, {getShortName, getJsonName} from '../build/resources/main/lib/util/app';
 
 
 describe('app', () => {

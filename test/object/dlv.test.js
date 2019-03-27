@@ -1,6 +1,6 @@
 /* global describe it */
 var _testdata = require('./testdata.js');
-var _object	 = require('../../build/resources/main/site/lib/enonic/util/object.js');
+var _object	 = require('../../build/resources/main/lib/util/object.js');
 var _assert	 = require('assert');
 
 var deepStrictEqual = _assert.deepStrictEqual;

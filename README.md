@@ -26,7 +26,7 @@ Please contribute!
 ### Controllers (3 & 4)
     // (3) Require the library in any controller
     var libs = {
-        util: require('/lib/enonic/util')
+        util: require('/lib/util')
     }
 
     // (4) Use any of the functions like so (not working examples, just showing the format):
@@ -41,11 +41,17 @@ Refer to each js-file in /lib/enonic/util/ on GitHub for documentation on each f
 
 | Lib version | XP version |
 | ----------- | ---------- |
+| 2.0.0 | 7.0.0 |
 | 1.4.x | 6.14.0 |
 | 1.[1-3].x | 6.3.1 |
 | 1.0.0 | 6.0.0 |
 
 ## Changelog
+
+### 2.0.0
+
+* Compatibility with XP7
+* Restructuring (`/lib/enonic/util/` -> `/lib/util/`)
 
 ### 1.4.0
 

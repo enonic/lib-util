@@ -1,6 +1,6 @@
 /* global describe it */
 import {deepStrictEqual} from 'assert';
-import {isFunction} from '../../build/resources/main/site/lib/enonic/util/value/isFunction';
+import {isFunction} from '../../build/resources/main/lib/util/value/isFunction';
 import {OBJ} from '../object/testdata';
 
 describe('value', () => {

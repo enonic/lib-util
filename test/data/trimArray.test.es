@@ -1,6 +1,6 @@
 /* global describe it */
 import {deepStrictEqual} from 'assert';
-import {trimArray} from '../../build/resources/main/site/lib/enonic/util/data';
+import {trimArray} from '../../build/resources/main/lib/util/data';
 
 
 const A_FUNCTION = () => {};

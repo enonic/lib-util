@@ -1,6 +1,6 @@
 /* global describe it */
 import {deepStrictEqual} from 'assert';
-import {deleteEmptyProperties} from '../../build/resources/main/site/lib/enonic/util/data';
+import {deleteEmptyProperties} from '../../build/resources/main/lib/util/data';
 //import {A_FUNCTION, NOW, OBJ} from '../object/testdata'; // This makes other tests fail!
 
 const A_FUNCTION = () => {};

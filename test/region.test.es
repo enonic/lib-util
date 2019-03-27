@@ -11,7 +11,7 @@ import fakePortal, {BODY_REGION} from './fake/portal';
 const proxyquireStrict = proxyquire.noCallThru();
 
 
-const region = proxyquireStrict('../build/resources/main/site/lib/enonic/util/region', {
+const region = proxyquireStrict('../build/resources/main/lib/util/region', {
 	'/lib/xp/portal': fakePortal
 });
 const {get} = region;

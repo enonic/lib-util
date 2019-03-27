@@ -18,17 +18,17 @@ import {Log, LogWarnings} from './fake/log'; // eslint-disable-line no-unused-va
 import fakePortal from './fake/portal';
 
 
-const libGetParent = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content/getParent', {
+const libGetParent = proxyquireStrict('../build/resources/main/lib/util/content/getParent', {
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal
 });
 
-const libGetTree = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content/getTree', {
+const libGetTree = proxyquireStrict('../build/resources/main/lib/util/content/getTree', {
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal
 });
 
-const content = proxyquireStrict('../build/resources/main/site/lib/enonic/util/content', {
+const content = proxyquireStrict('../build/resources/main/lib/util/content', {
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal,
 	'./content/getParent': libGetParent,

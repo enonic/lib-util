@@ -1,6 +1,6 @@
 /* global describe it */
 import {deepStrictEqual} from 'assert';
-import {forceArray} from '../../build/resources/main/site/lib/enonic/util/data';
+import {forceArray} from '../../build/resources/main/lib/util/data';
 
 const A_FUNCTION = () => {};
 const NOW = new Date();

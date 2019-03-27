@@ -1,5 +1,5 @@
 var _assert = require('assert');
-var _value  = require('../../build/resources/main/site/lib/enonic/util/value.js');
+var _value  = require('../../build/resources/main/lib/util/value.js');
 
 var deepStrictEqual = _assert.deepStrictEqual;
 var isString        = _value.isString;
