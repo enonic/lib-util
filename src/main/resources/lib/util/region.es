@@ -9,9 +9,17 @@ import {getComponent} from '/lib/xp/portal';
  * @returns {Array}
  */
 export const get = () => {
-	const component = getComponent(); log.debug({component});
-	const {regions} = component; log.debug({regions});
-	const values = Object.values(regions); log.debug({values});
+	const component = getComponent();
+	const {regions} = component;
+	const values = [];
+	for (const key in regions) {
+        if (regions.hasOwnProperty(key)) {
+            const region = regions[key];
+			// The "name" property has been dropped in 7.0, so we add it back in here for backwards compatibility
+            region.name = key;
+            values.push(region);
+        }
+    }
 	return values;
 };
 
