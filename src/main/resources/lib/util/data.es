@@ -52,19 +52,13 @@ export const trimArray = maybeArray => forceArray(maybeArray).filter(x => isSet(
  * @param {boolean} recursive
  */
 export function deleteEmptyProperties(obj, recursive = false) {
-	//console.log('obj:', obj, ' recursive:', recursive);
-	Object.entries(obj).forEach(([key, value]) => {
-		//console.log('key:', key, ' value:', value);
-		if (value === '') {
-			//console.log('deleting key:', key);
-			delete obj[key]; // eslint-disable-line no-param-reassign
-		} else if (recursive && typeof value === 'object') {
-			deleteEmptyProperties(value, recursive);
-		} /*else {
-			console.log('keeping key:', key);
-		}*/
-	});
-	//return obj;
+	for (var i in obj) {
+        if (obj[i] === '') {
+            delete obj[i];
+        } else if (recursive && typeof obj[i] === 'object') {
+            exports.deleteEmptyProperties(obj[i], recursive);
+        }
+    }
 }
 
 
