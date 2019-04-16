@@ -9,7 +9,7 @@ Please contribute!
 1. Install the library in build.gradle file.
 2. Build your app source using Gradle.
 3. Require it in any controller you need it in.
-4. Use any function from this lib's `/lib/enonic/util/` folder (see examples).
+4. Use any function from this lib's `/lib/util/` folder (see examples).
 
 ### Gradle build script (1)
 
@@ -20,7 +20,7 @@ Please contribute!
     }
 
     dependencies {
-        include 'com.enonic.lib:util:1.3.0'
+        include 'com.enonic.lib:util:2.0.0'
     }
 
 ### Controllers (3 & 4)

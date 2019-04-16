@@ -21,17 +21,20 @@ node {
 	download true
 }
 
-wrapper {
-	gradleVersion = '5.0'
-}
-
-task transpile(type: NpmTask) {
+task transpile(
+	dependsOn: npmInstall,
+	type: NpmTask
+) {
 	args = ['run', 'build']
 	outputs.dir './build/resources/main' // processResources will delete the directory if this is not present
 }
 
 task watch(type: NpmTask) {
 	args = ['run', 'watch']
+}
+
+task tests(type: NpmTask) {
+	args = ['run', 'test']
 }
 
 processResources {
