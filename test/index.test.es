@@ -10,6 +10,11 @@ const fakeAdmin = {};
 const fakePortal = {};
 const fakeContent = {};
 
+const libGetChildren = proxyquireStrict('../build/resources/main/lib/util/content/getChildren', {
+	'/lib/xp/content': fakeContent,
+	'/lib/xp/portal': fakePortal
+});
+
 const libGetParent = proxyquireStrict('../build/resources/main/lib/util/content/getParent', {
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal
@@ -37,6 +42,7 @@ const libPortal = proxyquireStrict('../build/resources/main/lib/util/portal', {
 const libContent = proxyquireStrict('../build/resources/main/lib/util/content', {
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal,
+	'./content/getChildren': libGetChildren,
 	'./content/getParent': libGetParent,
 	'./content/getTree': libGetTree
 });
@@ -63,7 +69,7 @@ const {
 		isSet: dataIsSet, isInt: dataIsInt, forceArray, trimArray, deleteEmptyProperties
 	},
 	content: {
-		get, exists, getParent, getPath, getProperty, getTree
+		get, exists, getChildren, getParent, getPath, getProperty, getTree
 	},
 	object: {dlv, hasProperty},
 	portal: {getLocale},
@@ -100,6 +106,7 @@ describe('index', () => {
 
 			'get',
 			'exists',
+			'getChildren',
 			'getParent',
 			'getPath',
 			'getProperty',

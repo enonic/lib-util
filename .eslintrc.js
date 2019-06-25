@@ -43,6 +43,7 @@ module.exports = {
 			allowAfterSuper: false,
 			enforceInMethodNames: false,
 		}],
+		'object-curly-newline': ['off'],
 		'object-curly-spacing': ['off'],
 		'import/prefer-default-export': ['off'],
 		'spaced-comment': ['off']
