@@ -5,6 +5,8 @@ import {
 //import {get as getContext} from '/lib/xp/context';
 import {getContent as getCurrentContent} from '/lib/xp/portal';
 
+import {addFilter} from '../query/addFilter';
+import {hasValue} from '../query/hasValue';
 //import {toStr} from '../value';
 import {isFunction} from '../value/isFunction';
 
@@ -20,20 +22,24 @@ export function getChildren({
 	aggregations,
 	contentTypes = [],
 	count = -1, // Get all children by default
-	filters,
+	filters = {},
 	map, //= ({displayName, data}) => ({displayName, data}),
 	query,
 	sort = '_manualordervalue DESC',
 	start = 0
 } = {}) {
 	//log.debug(toStr({branch, contentTypes, count, id, path, key, content, sort, start}));
-	const cQ = `_parentPath = '/content${content._path}'`; // Only direct children
+	addFilter({
+		clause: 'should',
+		filter: hasValue('_parentPath', [`/content${content._path}`]),
+		filters // Gets modified
+	});
 	const queryParams = {
 		aggregations,
 		count,
 		contentTypes,
 		filters,
-		query: query ? `${cQ} AND (${query})` : cQ,
+		query,
 		sort,
 		start
 	};
