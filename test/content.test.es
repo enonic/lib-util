@@ -18,6 +18,11 @@ import {Log, LogWarnings} from './fake/log'; // eslint-disable-line no-unused-va
 import fakePortal from './fake/portal';
 
 
+const libGetAncestors = proxyquireStrict('../build/resources/main/lib/util/content/getAncestors', {
+	'/lib/xp/content': fakeContent,
+	'/lib/xp/portal': fakePortal
+});
+
 const libGetChildren = proxyquireStrict('../build/resources/main/lib/util/content/getChildren', {
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal
@@ -36,13 +41,15 @@ const libGetTree = proxyquireStrict('../build/resources/main/lib/util/content/ge
 const content = proxyquireStrict('../build/resources/main/lib/util/content', {
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal,
+	'./content/getAncestors': libGetAncestors,
 	'./content/getChildren': libGetChildren,
 	'./content/getParent': libGetParent,
 	'./content/getTree': libGetTree
 });
 
 const {
-	exists, get, getChildren, getPath, getParent, getProperty, getTree
+	exists, get, getAncestors, getChildren, getPath, getParent, getProperty,
+	getTree
 } = content;
 //console.log('content:', content);
 
@@ -58,6 +65,7 @@ describe('content', () => {
 		[
 			'content.exists',
 			'content.get',
+			'content.getAncestors',
 			'content.getChildren',
 			'content.getPath',
 			'content.getParent',
@@ -65,6 +73,7 @@ describe('content', () => {
 
 			'exists',
 			'get',
+			'getAncestors',
 			'getChildren',
 			'getPath',
 			'getParent',
