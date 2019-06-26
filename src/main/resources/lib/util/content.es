@@ -1,6 +1,8 @@
 //──────────────────────────────────────────────────────────────────────────────
 // Functionality to assist with working with content in XP
 //──────────────────────────────────────────────────────────────────────────────
+import {getAncestors as importedGetAncestors} from './content/getAncestors';
+import {getChildren as importedGetChildren} from './content/getChildren';
 import {getParent as importedGetParent} from './content/getParent';
 import {getTree as importedGetTree} from './content/getTree';
 import {get as getContentByKey} from '/lib/xp/content';
@@ -21,6 +23,12 @@ export const get = key => typeof key === 'undefined' ? getCurrentContent() : get
  * @returns {boolean}
  */
 export const exists = path => !!getContentByKey({key: path});
+
+
+export const getAncestors = importedGetAncestors;
+
+
+export const getChildren = importedGetChildren;
 
 
 export const getParent = importedGetParent;
@@ -62,6 +70,8 @@ export const getTree = importedGetTree;
 export default {
 	exists,
 	get,
+	getAncestors,
+	getChildren,
 	getPath,
 	getParent,
 	getProperty,
