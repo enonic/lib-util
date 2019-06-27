@@ -14,6 +14,7 @@ import {
 	CHILD_ID, CHILD_PATH, CHILD_CONTENT, NAME, PATH, UUID // eslint-disable-line no-unused-vars
 } from './fake/constants';
 import fakeContent from './fake/content';
+import fakeContext from './fake/context';
 import {Log, LogWarnings} from './fake/log'; // eslint-disable-line no-unused-vars
 import fakePortal from './fake/portal';
 
@@ -33,6 +34,11 @@ const libGetParent = proxyquireStrict('../build/resources/main/lib/util/content/
 	'/lib/xp/portal': fakePortal
 });
 
+const libGetSites = proxyquireStrict('../build/resources/main/lib/util/content/getSites', {
+	'/lib/xp/content': fakeContent,
+	'/lib/xp/context': fakeContext
+});
+
 const libGetTree = proxyquireStrict('../build/resources/main/lib/util/content/getTree', {
 	'/lib/xp/content': fakeContent,
 	'/lib/xp/portal': fakePortal
@@ -44,12 +50,13 @@ const content = proxyquireStrict('../build/resources/main/lib/util/content', {
 	'./content/getAncestors': libGetAncestors,
 	'./content/getChildren': libGetChildren,
 	'./content/getParent': libGetParent,
+	'./content/getSites': libGetSites,
 	'./content/getTree': libGetTree
 });
 
 const {
 	exists, get, getAncestors, getChildren, getPath, getParent, getProperty,
-	getTree
+	getSites, getTree
 } = content;
 //console.log('content:', content);
 
@@ -78,6 +85,7 @@ describe('content', () => {
 			'getPath',
 			'getParent',
 			'getProperty',
+			'getSites',
 			'getTree'
 		].forEach((v) => {
 			it(`${v} is a function`, () => { deepStrictEqual('function', typeof eval(v)); });

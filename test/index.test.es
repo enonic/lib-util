@@ -9,6 +9,7 @@ const proxyquireStrict = proxyquire.noCallThru();
 const fakeAdmin = {};
 const fakePortal = {};
 const fakeContent = {};
+const fakeContext = {};
 
 const libGetAncestors = proxyquireStrict('../build/resources/main/lib/util/content/getAncestors', {
 	'/lib/xp/content': fakeContent,
@@ -25,6 +26,11 @@ const libGetParent = proxyquireStrict('../build/resources/main/lib/util/content/
 	'/lib/xp/portal': fakePortal
 });
 //console.log('libGetParent:', libGetParent);
+
+const libGetSites = proxyquireStrict('../build/resources/main/lib/util/content/getSites', {
+	'/lib/xp/content': fakeContent,
+	'/lib/xp/context': fakeContext
+});
 
 const libGetTree = proxyquireStrict('../build/resources/main/lib/util/content/getTree', {
 	'/lib/xp/content': fakeContent,
@@ -50,6 +56,7 @@ const libContent = proxyquireStrict('../build/resources/main/lib/util/content', 
 	'./content/getAncestors': libGetAncestors,
 	'./content/getChildren': libGetChildren,
 	'./content/getParent': libGetParent,
+	'./content/getSites': libGetSites,
 	'./content/getTree': libGetTree
 });
 //console.log('libContent:', libContent);
@@ -75,7 +82,7 @@ const {
 		isSet: dataIsSet, isInt: dataIsInt, forceArray, trimArray, deleteEmptyProperties
 	},
 	content: {
-		get, exists, getAncestors, getChildren, getParent, getPath, getProperty, getTree
+		get, exists, getAncestors, getChildren, getParent, getPath, getProperty, getSites, getTree
 	},
 	object: {dlv, hasProperty},
 	portal: {getLocale},
@@ -117,6 +124,7 @@ describe('index', () => {
 			'getParent',
 			'getPath',
 			'getProperty',
+			'getSites',
 			'getTree',
 
 			'dataIsInt',

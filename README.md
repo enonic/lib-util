@@ -48,6 +48,10 @@ Refer to each js-file in /lib/enonic/util/ on GitHub for documentation on each f
 
 ## Changelog
 
+### 2.2.0
+
+* Added getSites
+
 ### 2.1.0
 
 * Added getAncestors

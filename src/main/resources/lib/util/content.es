@@ -4,6 +4,7 @@
 import {getAncestors as importedGetAncestors} from './content/getAncestors';
 import {getChildren as importedGetChildren} from './content/getChildren';
 import {getParent as importedGetParent} from './content/getParent';
+import {getSites as importedGetSites} from './content/getSites';
 import {getTree as importedGetTree} from './content/getTree';
 import {get as getContentByKey} from '/lib/xp/content';
 import {getContent as getCurrentContent} from '/lib/xp/portal';
@@ -64,6 +65,9 @@ export function getProperty(key, property) {
 }
 
 
+export const getSites = importedGetSites;
+
+
 export const getTree = importedGetTree;
 
 
@@ -75,5 +79,6 @@ export default {
 	getPath,
 	getParent,
 	getProperty,
+	getSites,
 	getTree
 };
