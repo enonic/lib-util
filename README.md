@@ -41,7 +41,7 @@ Refer to each js-file in /lib/enonic/util/ on GitHub for documentation on each f
 
 | Lib version | XP version |
 | ----------- | ---------- |
-| 2.2.0 | 7.0.0 |
+| 2.2.x | 7.0.0 |
 | 2.1.0 | 7.0.0 |
 | 2.0.0 | 7.0.0 |
 | 1.4.x | 6.14.0 |
@@ -49,6 +49,10 @@ Refer to each js-file in /lib/enonic/util/ on GitHub for documentation on each f
 | 1.0.0 | 6.0.0 |
 
 ## Changelog
+
+### 2.2.1
+
+* Compile lib-context since getSites requires it.
 
 ### 2.2.0
 
