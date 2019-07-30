@@ -20,7 +20,7 @@ Please contribute!
     }
 
     dependencies {
-        include 'com.enonic.lib:util:2.0.0'
+        include 'com.enonic.lib:lib-util:2.0.0'
     }
 
 ### Controllers (3 & 4)
@@ -35,7 +35,7 @@ Please contribute!
     libs.util.data.forceArray(x);
     libs.util.data.trimArray(x);
 
-Refer to each js-file in /lib/enonic/util/ on GitHub for documentation on each function.
+Refer to each js-file in `/lib/util/` on GitHub for documentation on each function.
 
 ## Compatibility
 
