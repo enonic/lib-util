@@ -1,15 +1,15 @@
 {
   "devDependencies": {
     "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.7.2",
+    "@babel/core": "^7.11.1",
     "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
-    "@babel/plugin-transform-modules-commonjs": "^7.7.0",
-    "@babel/plugin-transform-object-assign": "^7.2.0",
-    "@babel/preset-env": "^7.7.1",
-    "@babel/register": "^7.7.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "@babel/plugin-transform-object-assign": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/register": "^7.10.5",
     "babel-plugin-array-includes": "^2.0.3",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
     "mocha": "^8.1.1",
     "proxyquire": "^2.1.3"
