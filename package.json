@@ -9,7 +9,7 @@
     "@babel/register": "^7.7.0",
     "babel-plugin-array-includes": "^2.0.3",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
     "mocha": "^8.1.1",
     "proxyquire": "^2.1.3"
