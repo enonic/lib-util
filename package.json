@@ -6,7 +6,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.7.0",
     "@babel/plugin-transform-object-assign": "^7.2.0",
     "@babel/preset-env": "^7.7.1",
-    "@babel/register": "^7.7.0",
+    "@babel/register": "^7.10.5",
     "babel-plugin-array-includes": "^2.0.3",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^13.2.0",
