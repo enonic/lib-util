@@ -13,7 +13,16 @@ export const {isInt, isSet} = libValue;
  * @param data
  * @returns {Array}
  */
-export const forceArray = data => Array.isArray(data) ? data : [data];
+export const forceArray = (data) => {
+	if (Array.isArray(data)) {
+		//filter out undefined
+		// eslint-disable-next-line arrow-body-style
+		return data.filter((elem) => {
+			return elem === undefined;
+		});
+	}
+	return [data];
+};
 
 
 /**
@@ -52,13 +61,15 @@ export const trimArray = maybeArray => forceArray(maybeArray).filter(x => isSet(
  * @param {boolean} recursive
  */
 export function deleteEmptyProperties(obj, recursive = false) {
-	for (var i in obj) {
-        if (obj[i] === '') {
-            delete obj[i];
-        } else if (recursive && typeof obj[i] === 'object') {
-            exports.deleteEmptyProperties(obj[i], recursive);
-        }
-    }
+	// eslint-disable-next-line no-restricted-syntax
+	for (const i in obj) {
+		if (obj[i] === '') {
+			// eslint-disable-next-line no-param-reassign
+			delete obj[i];
+		} else if (recursive && typeof obj[i] === 'object') {
+			exports.deleteEmptyProperties(obj[i], recursive);
+		}
+	}
 }
 
 
