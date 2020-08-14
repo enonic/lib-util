@@ -10,7 +10,6 @@ import {hasValue} from '../query/hasValue';
 //import {toStr} from '../value';
 import {isFunction} from '../value/isFunction';
 
-
 export function getChildren({
 	id,
 	path,
@@ -21,7 +20,7 @@ export function getChildren({
 
 	aggregations,
 	contentTypes = [],
-	count = -1, // Get all children by default
+	count = 1000,
 	filters = {},
 	map, //= ({displayName, data}) => ({displayName, data}),
 	query,
@@ -43,11 +42,17 @@ export function getChildren({
 		sort,
 		start
 	};
-	//log.debug(toStr({queryParams}));
-	const childRes = queryContent(queryParams);
-	if (isFunction(map)) {
-		childRes.hits = childRes.hits.map(c => map(c));
+
+	let allHits = [];
+	let childRes;
+	childRes = queryContent(queryParams);
+	while (start + childRes.length !== childRes.total) {
+		queryParams.start += 1000;
+		allHits = allHits.concat(childRes.hits);
+		childRes = queryContent(queryParams);
 	}
-	//log.debug(toStr({childRes}));
+	if (isFunction(map)) {
+		allHits = allHits.map((c) => map(c));
+	}
 	return childRes;
 } // function getChildren

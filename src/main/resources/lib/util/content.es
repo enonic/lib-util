@@ -6,34 +6,28 @@ import {getChildren as importedGetChildren} from './content/getChildren';
 import {getParent as importedGetParent} from './content/getParent';
 import {getSites as importedGetSites} from './content/getSites';
 import {getTree as importedGetTree} from './content/getTree';
-import {get as getContentByKey} from '/lib/xp/content';
+import {get as getContentByKey, exists as contentExists} from '/lib/xp/content';
 import {getContent as getCurrentContent} from '/lib/xp/portal';
-
 
 /**
  * Get content by key (path or id)
  * @param {string} key - Content key
  * @returns {object} Content object
  */
-export const get = key => typeof key === 'undefined' ? getCurrentContent() : getContentByKey({key});
-
+export const get = (key) => typeof key === 'undefined' ? getCurrentContent() : getContentByKey({key});
 
 /**
- * Check if content exists at path
+ * Check if content exists
  * @param {string} path
  * @returns {boolean}
  */
-export const exists = path => !!getContentByKey({key: path});
-
+export const exists = (path) => !!contentExists({key: path});
 
 export const getAncestors = importedGetAncestors;
 
-
 export const getChildren = importedGetChildren;
 
-
 export const getParent = importedGetParent;
-
 
 /**
  * Returns the path to the content location. If the key to a content is passed, it will be used. If contenKey is null, the path
@@ -49,7 +43,6 @@ export function getPath(key) {
 	return getCurrentContent()._path;
 }
 
-
 /**
  * Get content property
  * @param {string} key - Content key
@@ -64,12 +57,9 @@ export function getProperty(key, property) {
 	return result ? result[property] : null;
 }
 
-
 export const getSites = importedGetSites;
 
-
 export const getTree = importedGetTree;
-
 
 export default {
 	exists,

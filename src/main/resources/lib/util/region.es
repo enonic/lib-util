@@ -3,7 +3,6 @@
 /////////////////////////////////////////////////////////////////////////
 import {getComponent} from '/lib/xp/portal';
 
-
 /**
  * Get regions as array
  * @returns {Array}
@@ -11,10 +10,9 @@ import {getComponent} from '/lib/xp/portal';
 export const get = () => {
 	const component = getComponent();
 	const {regions} = component;
-    const values = Object.keys(regions).map((key) => regions[key]);
+	const values = Object.keys(regions).map((key) => regions[key]);
 	return values;
 };
-
 
 export default {
 	get

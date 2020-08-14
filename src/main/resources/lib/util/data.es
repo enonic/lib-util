@@ -5,54 +5,35 @@
 // For backwards compatibility:
 import libValue from './value';
 
-export const {isInt, isSet} = libValue;
+export const { isInt, isSet } = libValue;
 
 /**
  * Force data to array
- * Note that current UTIL.log function won't reflect the changes due to a bug in JSON.stringify
- * @param data
- * @returns {Array}
+ * Will filter out any undefined values
+ * @param data - data to force into an array
+ * @returns {Array} A new array
  */
 export const forceArray = (data) => {
 	if (Array.isArray(data)) {
-		//filter out undefined
 		// eslint-disable-next-line arrow-body-style
 		return data.filter((elem) => {
-			return elem === undefined;
+			return elem !== undefined;
 		});
+	}
+	if (data === undefined) {
+		return [];
 	}
 	return [data];
 };
 
-
 /**
  * Trim empty array elements
- * Note that current UTIL.log function won't reflect the changes due to a bug in JSON.stringify
+ * Empty: undefined, null or ''
  * @param {Array} array - Array to trim
  * @returns {Array} Trimmed array
  */
-export const trimArray = maybeArray => forceArray(maybeArray).filter(x => isSet(x) && x !== '');
-/*export function trimArray(maybeArray) {
-	// Make sure array is an array
-	const array = forceArray(maybeArray);
-	const trimmedArray = [];
-	for (let i = 0; i < array.length; i += 1) {
-		let empty = true;
-		const object = array[i];
-
-		const keys = Object.keys(object);
-		for (let j = 0; j < keys.length; j += 1) {
-			if (object[keys[j]] !== '') {
-				empty = false;
-			}
-		}
-		if (!empty) {
-			trimmedArray.push(object);
-		}
-	}
-	return trimmedArray;
-}*/
-
+export const trimArray = (maybeArray) =>
+	forceArray(maybeArray).filter((x) => isSet(x) && x !== '');
 
 /**
  * Delete all properties with empty string from an object
@@ -71,7 +52,6 @@ export function deleteEmptyProperties(obj, recursive = false) {
 		}
 	}
 }
-
 
 export default {
 	deleteEmptyProperties,

@@ -1,6 +1,5 @@
 import {isObject, isString} from './value';
 
-
 /*
   Begin License MIT
   Inspiration from https://github.com/developit/dlv
@@ -25,7 +24,6 @@ export function dlv(object, keyPath, def) { // NOTE default is a reserved word
 	return ourObjectRef === undefined ? def : ourObjectRef;
 }
 
-
 export function hasProperty(object, property) {
 	if (!isObject(object)) { throw new Error('hasProperty(): object must be an object!'); }
 	if (!isString(property)) { throw new Error('hasProperty(): property must be a string!'); }
@@ -40,7 +38,6 @@ export function hasProperty(object, property) {
 	return true;
 }
 // End License MIT
-
 
 export default {
 	dlv,
