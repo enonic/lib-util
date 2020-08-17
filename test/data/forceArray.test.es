@@ -8,8 +8,9 @@ const NOW = new Date();
 describe('data', () => {
 	describe('forceArray', () => {
 		it('forceArray() --> []', () => deepStrictEqual(forceArray(), []));
-		it('forceArray([undefined]) --> []', () => deepStrictEqual(forceArray([undefined]), []));
-		it('forceArray([undefined, undefined]) --> []', () => deepStrictEqual(forceArray([undefined, undefined]), []));
+		it('forceArray(undefined) --> []', () => deepStrictEqual(forceArray(undefined), []));
+		it('forceArray([undefined]) --> [undefined]', () => deepStrictEqual(forceArray([undefined]), [undefined]));
+		it('forceArray([undefined, undefined]) --> [undefined, undefined]', () => deepStrictEqual(forceArray([undefined, undefined]), [undefined, undefined]));
 		it('forceArray(null) --> [null]', () => deepStrictEqual(forceArray(null), [null]));
 		it('forceArray([null]) --> [null]', () => deepStrictEqual(forceArray([null]), [null]));
 

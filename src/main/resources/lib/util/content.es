@@ -11,17 +11,18 @@ import {getContent as getCurrentContent} from '/lib/xp/portal';
 
 /**
  * Get content by key (path or id)
- * @param {string} key - Content key
+ * Will return portal getContent if param is empty
+ * @param {string} [key] - Content key
  * @returns {object} Content object
  */
 export const get = (key) => typeof key === 'undefined' ? getCurrentContent() : getContentByKey({key});
 
 /**
  * Check if content exists
- * @param {string} path
+ * @param {string} key
  * @returns {boolean}
  */
-export const exists = (path) => !!contentExists({key: path});
+export const exists = (key) => !!contentExists({ key });
 
 export const getAncestors = importedGetAncestors;
 

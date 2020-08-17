@@ -59,6 +59,7 @@ const {
 	getSites, getTree
 } = content;
 //console.log('content:', content);
+console.log('existis', exists(PATH));
 
 describe('content', () => {
 	before(() => {

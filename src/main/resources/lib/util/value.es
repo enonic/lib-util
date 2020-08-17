@@ -56,7 +56,7 @@ export const toStr = importedToStr;
 /**
  * Returns the value if the value is set. Otherwise returns an empty string.
  * @param {*} value
- * @returns value || ''
+ * @returns {*} value || ''
  */
 export const valueOrEmptyString = (value) => isSet(value) ? value : '';
 
@@ -64,7 +64,7 @@ export const valueOrEmptyString = (value) => isSet(value) ? value : '';
  * Returns the value1 if the value1 is set. Otherwise returns value2.
  * @param {*} value1
  * @param {*} value2
- * @returns value || ''
+ * @returns {*} value || ''
  */
 export function valueOr(value1, value2) {
 	if (arguments.length < 2) { throw new Error('valueOr requires two parameters!'); }
@@ -77,7 +77,7 @@ export function valueOr(value1, value2) {
  * Otherwise don't even execute the function expression and return undefined.
  * @param {*} value
  * @param {function} fn
- * @returns * || undefined
+ * @returns {*} * || undefined
  */
 export function ifSetPassToFunction(value, fn) {
 	if (arguments.length < 2) { throw new Error('ifSetPassToFunction requires two parameters!'); }

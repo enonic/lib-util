@@ -7,7 +7,6 @@ import {
 //import {toStr} from '../value';
 import {isFunction} from '../value/isFunction';
 
-
 export function getSites({
 	aggregations,
 	branch,
