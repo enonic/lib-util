@@ -2,6 +2,10 @@
 // Functionality to help with handling returned data from XP (json)	//
 /////////////////////////////////////////////////////////////////////////
 
+/**
+ * @module data
+ * */
+
 // For backwards compatibility:
 import libValue from './value';
 

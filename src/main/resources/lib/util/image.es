@@ -1,5 +1,8 @@
 import { exists, isObject } from './value';
 import get from './content';
+// Function that should ease the use of working with images
+
+/** @module image */
 
 /**
  * Finds the caption of an image

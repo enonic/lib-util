@@ -9,6 +9,8 @@ import {getTree as importedGetTree} from './content/getTree';
 import {get as getContentByKey, exists as contentExists} from '/lib/xp/content';
 import {getContent as getCurrentContent} from '/lib/xp/portal';
 
+/** @module content */
+
 /**
  * Get content by key (path or id)
  * Will return portal getContent if param is empty

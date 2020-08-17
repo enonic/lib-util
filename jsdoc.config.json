@@ -2,25 +2,25 @@
     "plugins": [
         "plugins/markdown"
     ],
-    "recurseDepth": 10,
     "source": {
         "include": [
-            "src/main/resources/lib/util"
+            "src/main/resources/lib/util/app.es",
+            "src/main/resources/lib/util/content",
+            "src/main/resources/lib/util/portal",
+            "src/main/resources/lib/util/query",
+            "src/main/resources/lib/util/value"
         ],
-        "includePattern": "^(.*)\\.es$",
-        "excludePattern": "^/test"
+        "exclude": [
+            "src/main/resources/lib/util/app.es"
+        ],
+        "includePattern": [
+            ".+\\.es?$"
+        ],
+        "excludePattern": ".+\\.(test)\\.es"
     },
     "opts" : {
-        "destination": "./docs/"
-    },
-    "sourceType": "module",
-    "tags": {
-        "allowUnknownTags": true,
-        "dictionaries": ["jsdoc","closure"]
-    },
-    "templates": {
-        "cleverLinks": false,
-        "monospaceLinks": false
+        "destination": "./docs/index.md",
+        "recurse": true
     }
 }
 

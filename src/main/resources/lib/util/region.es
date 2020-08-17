@@ -3,6 +3,8 @@
 /////////////////////////////////////////////////////////////////////////
 import {getComponent} from '/lib/xp/portal';
 
+/** @module region */
+
 /**
  * Get regions as array
  * @returns {Array}

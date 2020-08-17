@@ -4,6 +4,8 @@
 import {isFunction as importedIsFunction} from './value/isFunction';
 import {toStr as importedToStr} from './value/toStr';
 
+/** @module value */
+
 export const isFunction = importedIsFunction;
 
 /**

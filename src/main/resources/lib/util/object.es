@@ -1,5 +1,7 @@
 import {isObject, isString} from './value';
 
+/** @module object */
+
 /*
   Begin License MIT
   Inspiration from https://github.com/developit/dlv
