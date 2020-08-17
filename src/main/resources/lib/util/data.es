@@ -10,7 +10,7 @@ export const { isInt, isSet } = libValue;
 /**
  * Force data to array
  * Will return an empty array if data is undefined
- * @param {Any} data - data to force into an array
+ * @param {*} data - data to force into an array
  * @returns {Array}
  */
 export const forceArray = (data) => {
