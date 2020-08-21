@@ -17,8 +17,8 @@
   },
   "private": true,
   "scripts": {
-    "jsdoc": "jsdoc2md --files src/main/resources/lib/util/app.es --configure jsdoc.config.json > docs/index.md",
-    "jsdoc-show": "jsdoc2md --files src/main/resources/lib/util/app.es --configure jsdoc.config.json --namepaths",
+    "jsdoc": "jsdoc2md --files src/main/resources/lib/util/app.es --no-cache -c jdocconfig.json > docs/index.md",
+    "jsdoc-show": "jsdoc2md --files src/main/resources/lib/util/app.es --no-cache -c jdocconfig.json --namepaths",
     "build": "babel --env-name production -d ./build/resources/main src/main/resources",
     "mocha": "./node_modules/.bin/mocha --require @babel/register",
     "premocha": "npm run build",

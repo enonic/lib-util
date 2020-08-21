@@ -1,0 +1,29 @@
+{
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "recurseDepth": 2,
+    "source": {
+        "include": [
+            "src/main/resources/lib/util/content",
+            "src/main/resources/lib/util/portal",
+            "src/main/resources/lib/util/value",
+            "src/main/resources/lib/util/query",
+            "src/main/resources/lib/util/content.es",
+            "src/main/resources/lib/util/data.es",
+            "src/main/resources/lib/util/image.es",
+            "src/main/resources/lib/util/index.es",
+            "src/main/resources/lib/util/object.es",
+            "src/main/resources/lib/util/region.es",
+            "src/main/resources/lib/util/value.es"
+        ],
+        "includePattern": ".+\\.es?$",
+        "excludePattern": ".+(test).+\\.es"
+        
+    },
+    "opts" : {
+        "destination": "./docs/index.md",
+        "recurse": true
+    }
+}
+

@@ -16,10 +16,6 @@ export const value = libValue;
 
 export const {toStr} = libValue;
 
-/* Needs to have this module or
-it will be incorrect in the docs */
-/** @module log */
-
 /**
  * Log data
  * @param {*} data

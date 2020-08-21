@@ -1,11 +1,11 @@
 import { exists, isObject } from './value';
-import get from './content';
+import { get } from './content';
 // Function that should ease the use of working with images
 
 /** @module image */
 
 /**
- * Finds the caption of an image
+ * Finds the caption of an image <br>
  * Note* Assums the image is uploaded to content studio
  * @param {Object|String} imageRef Content, id or path to an image
  * @returns {String} Caption string or empty string

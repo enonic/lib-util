@@ -3,15 +3,15 @@
 <dl>
 <dt><a href="#module_app">app</a></dt>
 <dd></dd>
-<dt><a href="#module_app">app</a></dt>
+<dt><a href="#module_content">content</a></dt>
+<dd></dd>
+<dt><a href="#module_content">content</a></dt>
 <dd></dd>
 <dt><a href="#module_content">content</a></dt>
 <dd></dd>
 <dt><a href="#module_data">data</a></dt>
 <dd></dd>
 <dt><a href="#module_image">image</a></dt>
-<dd></dd>
-<dt><a href="#module_log">log</a></dt>
 <dd></dd>
 <dt><a href="#module_object">object</a></dt>
 <dd></dd>
@@ -26,29 +26,23 @@
 <dl>
 <dt><a href="#toStr">toStr</a> ⇒ <code>String</code></dt>
 <dd><p>Syntactic sugar for JSON.stringify</p></dd>
-<dt><a href="#toStr">toStr</a> ⇒ <code>String</code></dt>
-<dd><p>Syntactic sugar for JSON.stringify</p></dd>
 </dl>
 
 ## Functions
 
 <dl>
-<dt><a href="#getAncestors">getAncestors(params)</a> ⇒ <code>Array</code></dt>
-<dd><p>Returns a list of ancestors.</p></dd>
 <dt><a href="#getParent">getParent(Content, key, branch)</a> ⇒ <code>object</code></dt>
 <dd><p>Returns parent content or null if there is no parent content.</p></dd>
 <dt><a href="#getTree">getTree([key], [content], [levels], [count], [map], [sort], [branch])</a> ⇒ <code>Object</code> | <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>Returns a tree of contents.</p></dd>
 <dt><a href="#isFunction">isFunction(value)</a> ⇒ <code>boolean</code></dt>
 <dd><p>Returns true if the value is a function. Otherwise false.</p></dd>
-<dt><a href="#getAncestors">getAncestors(params)</a> ⇒ <code>Array</code></dt>
-<dd><p>Returns a list of ancestors.</p></dd>
 <dt><a href="#getParent">getParent(Content, key, branch)</a> ⇒ <code>object</code></dt>
 <dd><p>Returns parent content or null if there is no parent content.</p></dd>
 <dt><a href="#getTree">getTree([key], [content], [levels], [count], [map], [sort], [branch])</a> ⇒ <code>Object</code> | <code>Array.&lt;Object&gt;</code></dt>
 <dd><p>Returns a tree of contents.</p></dd>
-<dt><a href="#isFunction">isFunction(value)</a> ⇒ <code>boolean</code></dt>
-<dd><p>Returns true if the value is a function. Otherwise false.</p></dd>
+<dt><a href="#log">log(data)</a></dt>
+<dd><p>Log data</p></dd>
 </dl>
 
 <a name="module_app"></a>
@@ -58,55 +52,7 @@
 * [app](#module_app)
     * [.getJsonName](#module_app.getJsonName) ⇒ <code>String</code>
     * [.getShortName](#module_app.getShortName) ⇒ <code>String</code>
-    * [.getJsonName](#module_app.getJsonName) ⇒ <code>String</code>
-    * [.getShortName](#module_app.getShortName) ⇒ <code>String</code>
 
-<a name="module_app.getJsonName"></a>
-
-### app.getJsonName ⇒ <code>String</code>
-<p>Get app's name for use in JSON-nodes (com.enonic.app as com-enonic-app)</p>
-
-**Kind**: static constant of [<code>app</code>](#module_app)  
-<a name="module_app.getShortName"></a>
-
-### app.getShortName ⇒ <code>String</code>
-<p>Get short app name (last part)</p>
-
-**Kind**: static constant of [<code>app</code>](#module_app)  
-<a name="module_app.getJsonName"></a>
-
-### app.getJsonName ⇒ <code>String</code>
-<p>Get app's name for use in JSON-nodes (com.enonic.app as com-enonic-app)</p>
-
-**Kind**: static constant of [<code>app</code>](#module_app)  
-<a name="module_app.getShortName"></a>
-
-### app.getShortName ⇒ <code>String</code>
-<p>Get short app name (last part)</p>
-
-**Kind**: static constant of [<code>app</code>](#module_app)  
-<a name="module_app"></a>
-
-## app
-
-* [app](#module_app)
-    * [.getJsonName](#module_app.getJsonName) ⇒ <code>String</code>
-    * [.getShortName](#module_app.getShortName) ⇒ <code>String</code>
-    * [.getJsonName](#module_app.getJsonName) ⇒ <code>String</code>
-    * [.getShortName](#module_app.getShortName) ⇒ <code>String</code>
-
-<a name="module_app.getJsonName"></a>
-
-### app.getJsonName ⇒ <code>String</code>
-<p>Get app's name for use in JSON-nodes (com.enonic.app as com-enonic-app)</p>
-
-**Kind**: static constant of [<code>app</code>](#module_app)  
-<a name="module_app.getShortName"></a>
-
-### app.getShortName ⇒ <code>String</code>
-<p>Get short app name (last part)</p>
-
-**Kind**: static constant of [<code>app</code>](#module_app)  
 <a name="module_app.getJsonName"></a>
 
 ### app.getJsonName ⇒ <code>String</code>
@@ -126,6 +72,8 @@
 * [content](#module_content)
     * [.get](#module_content.get) ⇒ <code>object</code>
     * [.exists](#module_content.exists) ⇒ <code>boolean</code>
+    * [.getAncestors(params)](#module_content.getAncestors) ⇒ <code>Array</code>
+    * [.getAncestors(params)](#module_content.getAncestors) ⇒ <code>Array</code>
     * [.getPath(key)](#module_content.getPath) ⇒ <code>String</code>
     * [.getProperty(key, property)](#module_content.getProperty) ⇒ <code>\*</code>
 
@@ -152,6 +100,224 @@ Will return portal getContent if param is empty</p>
 | Param | Type |
 | --- | --- |
 | key | <code>string</code> | 
+
+<a name="module_content.getAncestors"></a>
+
+### content.getAncestors(params) ⇒ <code>Array</code>
+<p>Returns a list of ancestors.</p>
+
+**Kind**: static method of [<code>content</code>](#module_content)  
+**Returns**: <code>Array</code> - <p>Returns a list of ancestor content</p>  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| params | <code>object</code> |  | <p>JSON with the parameters.</p> |
+| [params.content] | <code>object</code> | <code>getContent()</code> | <p>Content (as JSON) to find ancestors of.</p> |
+| [params.contentTypes] | <code>Array</code> | <code>[&#x60;${app.name}:page&#x60;,&#x27;portal:site&#x27;]</code> | <p>Content types to filter on.</p> |
+| [params.count] | <code>Number</code> | <code>-1</code> | <p>Number of contents to fetch.</p> |
+| [params.sort] | <code>string</code> | <code>&quot;&#x27;_path ASC&#x27;&quot;</code> | <p>Sorting expression.</p> |
+
+<a name="module_content.getAncestors"></a>
+
+### content.getAncestors(params) ⇒ <code>Array</code>
+<p>Returns a list of ancestors.</p>
+
+**Kind**: static method of [<code>content</code>](#module_content)  
+**Returns**: <code>Array</code> - <p>Returns a list of ancestor content</p>  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| params | <code>object</code> |  | <p>JSON with the parameters.</p> |
+| [params.content] | <code>object</code> | <code>getContent()</code> | <p>Content (as JSON) to find ancestors of.</p> |
+| [params.contentTypes] | <code>Array</code> | <code>[&#x60;${app.name}:page&#x60;,&#x27;portal:site&#x27;]</code> | <p>Content types to filter on.</p> |
+| [params.count] | <code>Number</code> | <code>-1</code> | <p>Number of contents to fetch.</p> |
+| [params.sort] | <code>string</code> | <code>&quot;&#x27;_path ASC&#x27;&quot;</code> | <p>Sorting expression.</p> |
+
+<a name="module_content.getPath"></a>
+
+### content.getPath(key) ⇒ <code>String</code>
+<p>Returns the path to the content location. If the key to a content is passed, it will be used. If contenKey is null, the path
+to the page that the part is on will be returned.</p>
+
+**Kind**: static method of [<code>content</code>](#module_content)  
+**Returns**: <code>String</code> - <p>Returns the path of the save location.</p>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| key | <code>Content</code> | <p>content key. Example: config['saveFolder']</p> |
+
+<a name="module_content.getProperty"></a>
+
+### content.getProperty(key, property) ⇒ <code>\*</code>
+<p>Get content property</p>
+
+**Kind**: static method of [<code>content</code>](#module_content)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| key | <code>string</code> | <p>Content key</p> |
+| property | <code>string</code> | <p>Property name</p> |
+
+<a name="module_content"></a>
+
+## content
+
+* [content](#module_content)
+    * [.get](#module_content.get) ⇒ <code>object</code>
+    * [.exists](#module_content.exists) ⇒ <code>boolean</code>
+    * [.getAncestors(params)](#module_content.getAncestors) ⇒ <code>Array</code>
+    * [.getAncestors(params)](#module_content.getAncestors) ⇒ <code>Array</code>
+    * [.getPath(key)](#module_content.getPath) ⇒ <code>String</code>
+    * [.getProperty(key, property)](#module_content.getProperty) ⇒ <code>\*</code>
+
+<a name="module_content.get"></a>
+
+### content.get ⇒ <code>object</code>
+<p>Get content by key (path or id)
+Will return portal getContent if param is empty</p>
+
+**Kind**: static constant of [<code>content</code>](#module_content)  
+**Returns**: <code>object</code> - <p>Content object</p>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [key] | <code>string</code> | <p>Content key</p> |
+
+<a name="module_content.exists"></a>
+
+### content.exists ⇒ <code>boolean</code>
+<p>Check if content exists</p>
+
+**Kind**: static constant of [<code>content</code>](#module_content)  
+
+| Param | Type |
+| --- | --- |
+| key | <code>string</code> | 
+
+<a name="module_content.getAncestors"></a>
+
+### content.getAncestors(params) ⇒ <code>Array</code>
+<p>Returns a list of ancestors.</p>
+
+**Kind**: static method of [<code>content</code>](#module_content)  
+**Returns**: <code>Array</code> - <p>Returns a list of ancestor content</p>  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| params | <code>object</code> |  | <p>JSON with the parameters.</p> |
+| [params.content] | <code>object</code> | <code>getContent()</code> | <p>Content (as JSON) to find ancestors of.</p> |
+| [params.contentTypes] | <code>Array</code> | <code>[&#x60;${app.name}:page&#x60;,&#x27;portal:site&#x27;]</code> | <p>Content types to filter on.</p> |
+| [params.count] | <code>Number</code> | <code>-1</code> | <p>Number of contents to fetch.</p> |
+| [params.sort] | <code>string</code> | <code>&quot;&#x27;_path ASC&#x27;&quot;</code> | <p>Sorting expression.</p> |
+
+<a name="module_content.getAncestors"></a>
+
+### content.getAncestors(params) ⇒ <code>Array</code>
+<p>Returns a list of ancestors.</p>
+
+**Kind**: static method of [<code>content</code>](#module_content)  
+**Returns**: <code>Array</code> - <p>Returns a list of ancestor content</p>  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| params | <code>object</code> |  | <p>JSON with the parameters.</p> |
+| [params.content] | <code>object</code> | <code>getContent()</code> | <p>Content (as JSON) to find ancestors of.</p> |
+| [params.contentTypes] | <code>Array</code> | <code>[&#x60;${app.name}:page&#x60;,&#x27;portal:site&#x27;]</code> | <p>Content types to filter on.</p> |
+| [params.count] | <code>Number</code> | <code>-1</code> | <p>Number of contents to fetch.</p> |
+| [params.sort] | <code>string</code> | <code>&quot;&#x27;_path ASC&#x27;&quot;</code> | <p>Sorting expression.</p> |
+
+<a name="module_content.getPath"></a>
+
+### content.getPath(key) ⇒ <code>String</code>
+<p>Returns the path to the content location. If the key to a content is passed, it will be used. If contenKey is null, the path
+to the page that the part is on will be returned.</p>
+
+**Kind**: static method of [<code>content</code>](#module_content)  
+**Returns**: <code>String</code> - <p>Returns the path of the save location.</p>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| key | <code>Content</code> | <p>content key. Example: config['saveFolder']</p> |
+
+<a name="module_content.getProperty"></a>
+
+### content.getProperty(key, property) ⇒ <code>\*</code>
+<p>Get content property</p>
+
+**Kind**: static method of [<code>content</code>](#module_content)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| key | <code>string</code> | <p>Content key</p> |
+| property | <code>string</code> | <p>Property name</p> |
+
+<a name="module_content"></a>
+
+## content
+
+* [content](#module_content)
+    * [.get](#module_content.get) ⇒ <code>object</code>
+    * [.exists](#module_content.exists) ⇒ <code>boolean</code>
+    * [.getAncestors(params)](#module_content.getAncestors) ⇒ <code>Array</code>
+    * [.getAncestors(params)](#module_content.getAncestors) ⇒ <code>Array</code>
+    * [.getPath(key)](#module_content.getPath) ⇒ <code>String</code>
+    * [.getProperty(key, property)](#module_content.getProperty) ⇒ <code>\*</code>
+
+<a name="module_content.get"></a>
+
+### content.get ⇒ <code>object</code>
+<p>Get content by key (path or id)
+Will return portal getContent if param is empty</p>
+
+**Kind**: static constant of [<code>content</code>](#module_content)  
+**Returns**: <code>object</code> - <p>Content object</p>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [key] | <code>string</code> | <p>Content key</p> |
+
+<a name="module_content.exists"></a>
+
+### content.exists ⇒ <code>boolean</code>
+<p>Check if content exists</p>
+
+**Kind**: static constant of [<code>content</code>](#module_content)  
+
+| Param | Type |
+| --- | --- |
+| key | <code>string</code> | 
+
+<a name="module_content.getAncestors"></a>
+
+### content.getAncestors(params) ⇒ <code>Array</code>
+<p>Returns a list of ancestors.</p>
+
+**Kind**: static method of [<code>content</code>](#module_content)  
+**Returns**: <code>Array</code> - <p>Returns a list of ancestor content</p>  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| params | <code>object</code> |  | <p>JSON with the parameters.</p> |
+| [params.content] | <code>object</code> | <code>getContent()</code> | <p>Content (as JSON) to find ancestors of.</p> |
+| [params.contentTypes] | <code>Array</code> | <code>[&#x60;${app.name}:page&#x60;,&#x27;portal:site&#x27;]</code> | <p>Content types to filter on.</p> |
+| [params.count] | <code>Number</code> | <code>-1</code> | <p>Number of contents to fetch.</p> |
+| [params.sort] | <code>string</code> | <code>&quot;&#x27;_path ASC&#x27;&quot;</code> | <p>Sorting expression.</p> |
+
+<a name="module_content.getAncestors"></a>
+
+### content.getAncestors(params) ⇒ <code>Array</code>
+<p>Returns a list of ancestors.</p>
+
+**Kind**: static method of [<code>content</code>](#module_content)  
+**Returns**: <code>Array</code> - <p>Returns a list of ancestor content</p>  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| params | <code>object</code> |  | <p>JSON with the parameters.</p> |
+| [params.content] | <code>object</code> | <code>getContent()</code> | <p>Content (as JSON) to find ancestors of.</p> |
+| [params.contentTypes] | <code>Array</code> | <code>[&#x60;${app.name}:page&#x60;,&#x27;portal:site&#x27;]</code> | <p>Content types to filter on.</p> |
+| [params.count] | <code>Number</code> | <code>-1</code> | <p>Number of contents to fetch.</p> |
+| [params.sort] | <code>string</code> | <code>&quot;&#x27;_path ASC&#x27;&quot;</code> | <p>Sorting expression.</p> |
 
 <a name="module_content.getPath"></a>
 
@@ -190,7 +356,7 @@ to the page that the part is on will be returned.</p>
 <a name="module_data.forceArray"></a>
 
 ### data.forceArray ⇒ <code>Array</code>
-<p>Force data to array
+<p>Force data to array <br>
 Will return an empty array if data is undefined</p>
 
 **Kind**: static constant of [<code>data</code>](#module_data)  
@@ -202,8 +368,8 @@ Will return an empty array if data is undefined</p>
 <a name="module_data.trimArray"></a>
 
 ### data.trimArray ⇒ <code>Array</code>
-<p>Trim empty array elements
-Empty: undefined, null or ''</p>
+<p>Trim empty array elements <br>
+Like undefined, null or ''</p>
 
 **Kind**: static constant of [<code>data</code>](#module_data)  
 **Returns**: <code>Array</code> - <p>Trimmed array</p>  
@@ -215,7 +381,7 @@ Empty: undefined, null or ''</p>
 <a name="module_data.deleteEmptyProperties"></a>
 
 ### data.deleteEmptyProperties(obj, [recursive], recursive)
-<p>Delete all empty properties from an object (property is empty if its a empty string)
+<p>Delete all empty properties from an object (property is empty if its a empty string) <br>
 Set 'recursive' to true if you also want to delete properties in nested objects</p>
 
 **Kind**: static method of [<code>data</code>](#module_data)  
@@ -232,7 +398,7 @@ Set 'recursive' to true if you also want to delete properties in nested objects<
 <a name="module_image.getCaption"></a>
 
 ### image.getCaption ⇒ <code>String</code>
-<p>Finds the caption of an image
+<p>Finds the caption of an image <br>
 Note* Assums the image is uploaded to content studio</p>
 
 **Kind**: static constant of [<code>image</code>](#module_image)  
@@ -241,20 +407,6 @@ Note* Assums the image is uploaded to content studio</p>
 | Param | Type | Description |
 | --- | --- | --- |
 | imageRef | <code>Object</code> \| <code>String</code> | <p>Content, id or path to an image</p> |
-
-<a name="module_log"></a>
-
-## log
-<a name="module_log.log"></a>
-
-### log.log(data)
-<p>Log data</p>
-
-**Kind**: static method of [<code>log</code>](#module_log)  
-
-| Param | Type |
-| --- | --- |
-| data | <code>\*</code> | 
 
 <a name="module_object"></a>
 
@@ -409,36 +561,6 @@ Otherwise don't even execute the function expression and return undefined.</p>
 | replacer | <code>function</code> | <p>default: null</p> |
 | space | <code>String</code> \| <code>Number</code> | <p>default: 4</p> |
 
-<a name="toStr"></a>
-
-## toStr ⇒ <code>String</code>
-<p>Syntactic sugar for JSON.stringify</p>
-
-**Kind**: global constant  
-**Returns**: <code>String</code> - <p>A JSON string representing the given value.</p>  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| value | <code>\*</code> |  |
-| replacer | <code>function</code> | <p>default: null</p> |
-| space | <code>String</code> \| <code>Number</code> | <p>default: 4</p> |
-
-<a name="getAncestors"></a>
-
-## getAncestors(params) ⇒ <code>Array</code>
-<p>Returns a list of ancestors.</p>
-
-**Kind**: global function  
-**Returns**: <code>Array</code> - <p>Returns a list of ancestor content</p>  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| params | <code>object</code> |  | <p>JSON with the parameters.</p> |
-| [params.content] | <code>object</code> | <code>getContent()</code> | <p>Content (as JSON) to find ancestors of.</p> |
-| [params.contentTypes] | <code>Array</code> | <code>[&#x60;${app.name}:page&#x60;,&#x27;portal:site&#x27;]</code> | <p>Content types to filter on.</p> |
-| [params.count] | <code>Number</code> | <code>-1</code> | <p>Number of contents to fetch.</p> |
-| [params.sort] | <code>string</code> | <code>&quot;&#x27;_path ASC&#x27;&quot;</code> | <p>Sorting expression.</p> |
-
 <a name="getParent"></a>
 
 ## getParent(Content, key, branch) ⇒ <code>object</code>
@@ -482,22 +604,6 @@ Otherwise don't even execute the function expression and return undefined.</p>
 | --- | --- |
 | value | <code>\*</code> | 
 
-<a name="getAncestors"></a>
-
-## getAncestors(params) ⇒ <code>Array</code>
-<p>Returns a list of ancestors.</p>
-
-**Kind**: global function  
-**Returns**: <code>Array</code> - <p>Returns a list of ancestor content</p>  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| params | <code>object</code> |  | <p>JSON with the parameters.</p> |
-| [params.content] | <code>object</code> | <code>getContent()</code> | <p>Content (as JSON) to find ancestors of.</p> |
-| [params.contentTypes] | <code>Array</code> | <code>[&#x60;${app.name}:page&#x60;,&#x27;portal:site&#x27;]</code> | <p>Content types to filter on.</p> |
-| [params.count] | <code>Number</code> | <code>-1</code> | <p>Number of contents to fetch.</p> |
-| [params.sort] | <code>string</code> | <code>&quot;&#x27;_path ASC&#x27;&quot;</code> | <p>Sorting expression.</p> |
-
 <a name="getParent"></a>
 
 ## getParent(Content, key, branch) ⇒ <code>object</code>
@@ -530,14 +636,14 @@ Otherwise don't even execute the function expression and return undefined.</p>
 | [sort] | <code>function</code> | <code>_manualordervalue DESC</code> | <p>Sorting expression.</p> |
 | [branch] | <code>String</code> |  | <p>Set by portal, depending on context, to either draft or master. May be overridden, but this is not recommended. Default is the current branch set in portal.</p> |
 
-<a name="isFunction"></a>
+<a name="log"></a>
 
-## isFunction(value) ⇒ <code>boolean</code>
-<p>Returns true if the value is a function. Otherwise false.</p>
+## log(data)
+<p>Log data</p>
 
 **Kind**: global function  
 
 | Param | Type |
 | --- | --- |
-| value | <code>\*</code> | 
+| data | <code>\*</code> | 
 

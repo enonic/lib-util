@@ -12,7 +12,7 @@ import libValue from './value';
 export const { isInt, isSet } = libValue;
 
 /**
- * Force data to array
+ * Force data to array <br>
  * Will return an empty array if data is undefined
  * @param {*} data - data to force into an array
  * @returns {Array}
@@ -28,8 +28,8 @@ export const forceArray = (data) => {
 };
 
 /**
- * Trim empty array elements
- * Empty: undefined, null or ''
+ * Trim empty array elements <br>
+ * Like undefined, null or ''
  * @param {Array} array - Array to trim
  * @returns {Array} Trimmed array
  */
@@ -37,7 +37,7 @@ export const trimArray = (maybeArray) =>
 	forceArray(maybeArray).filter((x) => isSet(x) && x !== '');
 
 /**
- * Delete all empty properties from an object (property is empty if its a empty string)
+ * Delete all empty properties from an object (property is empty if its a empty string) <br>
  * Set 'recursive' to true if you also want to delete properties in nested objects
  * @param {object} obj The object to delete properties from
  * @param {boolean} [recursive=false] Delete properties in nested objects

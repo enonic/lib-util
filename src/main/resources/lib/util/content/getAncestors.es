@@ -9,6 +9,7 @@ import {hasValue} from '../query/hasValue';
 //import {toStr} from '../value';
 import {isFunction} from '../value/isFunction';
 
+/** @module content */
 
 /**
  * Returns a list of ancestors.
