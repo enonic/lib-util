@@ -45,6 +45,7 @@ Refer to each js-file in `/lib/util/` on GitHub for documentation on each functi
 
 | Lib version | XP version |
 | ----------- | ---------- |
+| 2.3.x | 7.1.0 |
 | 2.2.x | 7.0.0 |
 | 2.1.0 | 7.0.0 |
 | 2.0.0 | 7.0.0 |
