@@ -5,8 +5,7 @@ import {get as getContentByKey} from '/lib/xp/content';
 import {getContent as getCurrentContent} from '/lib/xp/portal';
 
 import {getParent} from '../content/getParent';
-import {toStr} from '../value/toStr';
-
+// import {toStr} from '../value/toStr';
 
 /*const FALLBACK_LOCALE = 'en';
 
@@ -14,7 +13,15 @@ const LANGUAGES = [
 	FALLBACK_LOCALE
 ];*/
 
-
+/**
+ * @memberof module:portal
+ * @static
+ * @alias getLocale
+ *
+ * @param {Object} param JSON with the parameters
+ * @param {String} param.key content key
+ * @param {Object} [param.content = content.get(key) \|\| portal.currentContent()] defaults to content with given key
+ */
 export function getLocale({
 	key,
 	content = key ? getContentByKey({key}) : getCurrentContent()/*,
@@ -22,14 +29,14 @@ export function getLocale({
 	acceptLanguage = request.headers['Accept-Language'],
 	languages = LANGUAGES*/
 } = {}) {
-	log.debug(toStr({key, content}));
+	//log.debug(toStr({key, content}));
 	if (content && content.language) { return content.language; }
 	let parent = getParent({content});
-	log.debug(toStr({parent}));
+	//log.debug(toStr({parent}));
 	while (parent) {
 		if (parent.language) { return parent.language; }
 		parent = getParent({content: parent});
-		log.debug(toStr({parent}));
+		// log.debug(toStr({parent}));
 	}
 	/*if (acceptLanguage) { // adminGetLocale already does this?
 		AcceptLanguage.languages(languages);
@@ -37,10 +44,9 @@ export function getLocale({
 		if (language) { return language; }
 	}*/
 	const adminLocale = adminGetLocale();
-	log.debug(toStr({adminLocale}));
+	// log.debug(toStr({adminLocale}));
 	return adminLocale;
 }
-
 
 export default {
 	getLocale

@@ -6,40 +6,38 @@ import {getChildren as importedGetChildren} from './content/getChildren';
 import {getParent as importedGetParent} from './content/getParent';
 import {getSites as importedGetSites} from './content/getSites';
 import {getTree as importedGetTree} from './content/getTree';
-import {get as getContentByKey} from '/lib/xp/content';
+import {get as getContentByKey, exists as contentExists} from '/lib/xp/content';
 import {getContent as getCurrentContent} from '/lib/xp/portal';
 
+/**
+ * @module content
+ */
 
 /**
- * Get content by key (path or id)
- * @param {string} key - Content key
- * @returns {object} Content object
+ * Get content by key
+ * @param {String} [key = portal.getContent()] - path or id of content
+ * @returns {Object} Returns the content object
  */
-export const get = key => typeof key === 'undefined' ? getCurrentContent() : getContentByKey({key});
-
+export const get = (key) => typeof key === 'undefined' ? getCurrentContent() : getContentByKey({key});
 
 /**
- * Check if content exists at path
- * @param {string} path
- * @returns {boolean}
+ * Check if content exists
+ * @param {String} key - path or id
+ * @returns {Boolean}
  */
-export const exists = path => !!getContentByKey({key: path});
-
+export const exists = (key) => !!contentExists({ key });
 
 export const getAncestors = importedGetAncestors;
 
-
 export const getChildren = importedGetChildren;
-
 
 export const getParent = importedGetParent;
 
-
 /**
- * Returns the path to the content location. If the key to a content is passed, it will be used. If contenKey is null, the path
- * to the page that the part is on will be returned.
- * @param {Content} key - content key. Example: config['saveFolder']
- * @return {String} Returns the path of the save location.
+ * Returns the path to the content location. If the key to a content is passed, it will be used.
+ * If contenKey is null or undefined, the path to the page that the part is on will be returned.
+ * @param {Content} [key] - content key. Example: config['saveFolder']
+ * @return {String} Returns the path
  */
 export function getPath(key) {
 	if (key) {
@@ -49,11 +47,10 @@ export function getPath(key) {
 	return getCurrentContent()._path;
 }
 
-
 /**
  * Get content property
- * @param {string} key - Content key
- * @param {string} property - Property name
+ * @param {String} key - Content key
+ * @param {String} property - Property name
  * @returns {*}
  */
 export function getProperty(key, property) {
@@ -64,12 +61,9 @@ export function getProperty(key, property) {
 	return result ? result[property] : null;
 }
 
-
 export const getSites = importedGetSites;
 
-
 export const getTree = importedGetTree;
-
 
 export default {
 	exists,

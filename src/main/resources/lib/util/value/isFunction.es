@@ -1,5 +1,9 @@
 /**
  * Returns true if the value is a function. Otherwise false.
+ * @memberof module:value
+ * @static
+ * @alias isFunction
+ *
  * @param {*} value
  * @returns {boolean}
  */

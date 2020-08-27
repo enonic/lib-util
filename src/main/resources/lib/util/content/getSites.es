@@ -7,6 +7,23 @@ import {
 //import {toStr} from '../value';
 import {isFunction} from '../value/isFunction';
 
+/**
+ * Gets all content of type portal:sites
+ * @memberof module:content
+ * @static
+ * @alias getSites
+ *
+ * @param {Object} params - JSON with the parameters
+ * @param {Object} [params.aggregations]
+ * @param {Object} [params.branch] - what branch to use in the context
+ * @param {object} [params.context = lib.context.get()] - Context object used to find sites.
+ * @param {Number} [params.count = -1] - Number of elements to search for
+ * @param {Object} [params.filters]
+ * @param {String} [params.query]
+ * @param {String} [params.sort]
+ * @param {Number} [params.start]
+ * @returns {Object} Returns a query result with hits of all sites (result.hits)
+*/
 
 export function getSites({
 	aggregations,
@@ -38,7 +55,7 @@ export function getSites({
 
 	const childRes = run(context, () => queryContent(queryParams));
 	if (isFunction(map)) {
-		childRes.hits = childRes.hits.map(c => map(c));
+		childRes.hits = childRes.hits.map((c) => map(c));
 	}
 	//log.info(toStr({childRes}));
 	return childRes;

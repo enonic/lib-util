@@ -1,5 +1,9 @@
 /**
  * Syntactic sugar for JSON.stringify
+ * @memberof module:value
+ * @static
+ * @alias toStr
+ *
  * @param {*} value
  * @param {Function} replacer - default: null
  * @param {String|Number} space - default: 4
