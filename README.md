@@ -55,6 +55,11 @@ Refer to each js-file in `/lib/util/` on GitHub for documentation on each functi
 
 ## Changelog
 
+### 2.3.0
+
+* Documentation added
+* content.exists uses the 7.1 exists method
+
 ### 2.2.1
 
 * Compile lib-context since getSites requires it.
