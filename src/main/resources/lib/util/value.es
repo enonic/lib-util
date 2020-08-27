@@ -4,9 +4,9 @@
 import {isFunction as importedIsFunction} from './value/isFunction';
 import {toStr as importedToStr} from './value/toStr';
 
+/** @module value */
 
 export const isFunction = importedIsFunction;
-
 
 /**
  * Returns true if the value is an object. Otherwise false.
@@ -14,16 +14,14 @@ export const isFunction = importedIsFunction;
  * @param {*} value
  * @returns {boolean}
  */
-export const isObject = value => value === Object(value);
-
+export const isObject = (value) => value === Object(value);
 
 /**
  * Returns true if the value is a string. Otherwise false.
  * @param {*} value
  * @returns {boolean}
  */
-export const isString = value => typeof value === 'string' || value instanceof String;
-
+export const isString = (value) => typeof value === 'string' || value instanceof String;
 
 /**
  * Returns true if a value is set. Returns false if the value is NOT set.
@@ -35,14 +33,12 @@ export function isSet(value) {
 	return value !== null && typeof value !== 'undefined';
 }
 
-
 /**
  * Returns true if a value is NOT set. Returns false if the value is set.
  * @param {*} value
  * @returns {boolean}
  */
-export const isNotSet = value => value === null || typeof value === 'undefined';
-
+export const isNotSet = (value) => value === null || typeof value === 'undefined';
 
 /* eslint-disable no-restricted-globals */
 /**
@@ -57,29 +53,25 @@ export function isInt(value) {
 }
 /* eslint-enable no-restricted-globals */
 
-
 export const toStr = importedToStr;
-
 
 /**
  * Returns the value if the value is set. Otherwise returns an empty string.
  * @param {*} value
- * @returns value || ''
+ * @returns {*} value || ''
  */
-export const valueOrEmptyString = value => isSet(value) ? value : '';
-
+export const valueOrEmptyString = (value) => isSet(value) ? value : '';
 
 /**
  * Returns the value1 if the value1 is set. Otherwise returns value2.
  * @param {*} value1
  * @param {*} value2
- * @returns value || ''
+ * @returns {*} value || ''
  */
 export function valueOr(value1, value2) {
 	if (arguments.length < 2) { throw new Error('valueOr requires two parameters!'); }
 	return isSet(value1) ? value1 : value2;
 }
-
 
 /**
  * If the value is set: execute the function expression with value as the first
@@ -87,7 +79,7 @@ export function valueOr(value1, value2) {
  * Otherwise don't even execute the function expression and return undefined.
  * @param {*} value
  * @param {function} fn
- * @returns * || undefined
+ * @returns {*} * || undefined
  */
 export function ifSetPassToFunction(value, fn) {
 	if (arguments.length < 2) { throw new Error('ifSetPassToFunction requires two parameters!'); }
@@ -97,7 +89,6 @@ export function ifSetPassToFunction(value, fn) {
 	}
 	return undefined;
 }
-
 
 export default {
 	ifSetPassToFunction,

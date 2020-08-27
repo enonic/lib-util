@@ -16,14 +16,12 @@ export const value = libValue;
 
 export const {toStr} = libValue;
 
-
 /**
  * Log data
  * @param {*} data
  */
-exports.log = d => log.info('UTIL log %s', JSON.stringify(d, null, 4));
+exports.log = (d) => log.info('UTIL log %s', JSON.stringify(d, null, 4));
 // WARNING export const log will NOT work, because Enonic XP log object is in the global namespace!
-
 
 export default {
 	app,

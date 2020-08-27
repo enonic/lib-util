@@ -29,7 +29,7 @@ module.exports = {
 			ignoreComments: true,
 			ignoreRegExpLiterals: true,
 			ignoreStrings: true,
-			ignoreTemplateLiterals: true,
+			ignoreTemplateLiterals: true
 		}],
 		'no-confusing-arrow': ['off'],
 		'no-tabs': ['off'],
@@ -41,12 +41,15 @@ module.exports = {
 			],
 			allowAfterThis: false,
 			allowAfterSuper: false,
-			enforceInMethodNames: false,
+			enforceInMethodNames: false
 		}],
 		'object-curly-newline': ['off'],
 		'object-curly-spacing': ['off'],
 		'import/prefer-default-export': ['off'],
-		'spaced-comment': ['off']
+		'spaced-comment': ['off'],
+		'implicit-arrow-linebreak': ['warn'],
+		'linebreak-style': ['off'],
+		'import/extensions': ['error', 'never']
 	},
 
 	settings: {

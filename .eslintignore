@@ -1,0 +1,4 @@
+# Ignore the test files
+# We could need a seperate linting for the test files
+# Or rewrite them into the current style
+/test
