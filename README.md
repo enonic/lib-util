@@ -4,6 +4,10 @@ A toolkit for JavaScript developers working with Enonic XP. Handy functions for 
 
 Please contribute!
 
+## Documentation
+
+The documentation can be found in [docs](/docs/index.md)
+
 ## Usage
 
 1. Install the library in build.gradle file.
