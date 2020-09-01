@@ -5,7 +5,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
     "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "@babel/plugin-transform-object-assign": "^7.10.4",
-    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-env": "^7.11.5",
     "@babel/register": "^7.10.5",
     "babel-plugin-array-includes": "^2.0.3",
     "eslint": "^7.7.0",
