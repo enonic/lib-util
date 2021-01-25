@@ -59,6 +59,7 @@ Refer to each js-file in `/lib/util/` on GitHub for documentation on each functi
 
 * Buildsystem upgrades:
   * Node 12.20.1
+  * Upgrade node modules
 
 ### 2.3.0
 
