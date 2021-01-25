@@ -55,6 +55,11 @@ Refer to each js-file in `/lib/util/` on GitHub for documentation on each functi
 
 ## Changelog
 
+### 2.3.1
+
+* Buildsystem upgrades:
+  * Node 12.20.1
+
 ### 2.3.0
 
 * Documentation added

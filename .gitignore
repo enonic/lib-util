@@ -91,3 +91,6 @@ crashlytics-build.properties
 
 # Node
 /node_modules/
+
+# Enonic
+.enonic
