@@ -6,10 +6,10 @@ plugins {
 }
 
 dependencies {
-	compile "com.enonic.xp:lib-admin:${xpVersion}" // /lib/util/portal/getLocale.es
-	compile "com.enonic.xp:lib-content:${xpVersion}" // /lib/util/portal/getLocale.es
-	compile "com.enonic.xp:lib-context:${xpVersion}" // /lib/util/content/getSites.es
-	compile "com.enonic.xp:lib-portal:${xpVersion}" // /lib/util/portal/getLocale.es
+	compileOnly "com.enonic.xp:lib-admin:${xpVersion}" // /lib/util/portal/getLocale.es
+	compileOnly "com.enonic.xp:lib-content:${xpVersion}" // /lib/util/portal/getLocale.es
+	compileOnly "com.enonic.xp:lib-context:${xpVersion}" // /lib/util/content/getSites.es
+	compileOnly "com.enonic.xp:lib-portal:${xpVersion}" // /lib/util/portal/getLocale.es
 }
 
 repositories {
