@@ -45,6 +45,7 @@ Refer to each js-file in `/lib/util/` on GitHub for documentation on each functi
 
 | Lib version | XP version |
 | ----------- | ---------- |
+| 3.0.0 | 7.1.0 |
 | 2.3.x | 7.1.0 |
 | 2.2.x | 7.0.0 |
 | 2.1.0 | 7.0.0 |
@@ -55,6 +56,32 @@ Refer to each js-file in `/lib/util/` on GitHub for documentation on each functi
 
 ## Changelog
 
+### 3.0.0
+
+* Lib dependencies changed from `compile` to `compileOnly`
+
+```
+dependencies {
+  compileOnly "com.enonic.xp:lib-admin:${xpVersion}"
+  compileOnly "com.enonic.xp:lib-content:${xpVersion}"
+  compileOnly "com.enonic.xp:lib-context:${xpVersion}"
+  compileOnly "com.enonic.xp:lib-portal:${xpVersion}"
+}
+```
+
+These 4 libraries were available in an application using lib-util`
+via transitive dependency. From now on you will have to explicitly
+include them in the app if you need to use them in the code:
+
+```
+dependencies {
+  include 'com.enonic.lib:lib-util:3.0.0'
+  include "com.enonic.xp:lib-admin:${xpVersion}"
+  include "com.enonic.xp:lib-content:${xpVersion}"
+  include "com.enonic.xp:lib-context:${xpVersion}"
+  include "com.enonic.xp:lib-portal:${xpVersion}"
+}
+```
 ### 2.3.1
 
 * Buildsystem upgrades:
