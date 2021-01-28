@@ -56,7 +56,7 @@ export function getTree({
 		}));
 	}
 	const tree = {
-		content: contentTypes // eslint-disable-line no-nested-ternary
+		content: !!contentTypes && (contentTypes.length > 0) // eslint-disable-line no-nested-ternary
 			? (
 				contentTypes.includes(content.type) // eslint-disable-line no-nested-ternary
 					? (isFunction(map) ? map(content) : content)
