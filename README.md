@@ -58,7 +58,7 @@ Refer to each js-file in `/lib/util/` on GitHub for documentation on each functi
 
 ### 3.0.0
 
-* Lib dependencies changed from `compile` to `compileOnly`
+* Lib dependencies changed from `compile` to `compileOnly` to avoid conflict between libraries from different versions of XP
 
 ```
 dependencies {
@@ -69,9 +69,9 @@ dependencies {
 }
 ```
 
-These 4 libraries were available in an application using lib-util`
+These 4 libraries were available in an application using `lib-util`
 via transitive dependency. From now on you will have to explicitly
-include them in the app if you need to use them in the code:
+include them in the app if you are using `lib-util`:
 
 ```
 dependencies {
