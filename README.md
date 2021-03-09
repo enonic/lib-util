@@ -24,7 +24,13 @@ The documentation can be found in [docs](/docs/index.md)
     }
 
     dependencies {
-        include 'com.enonic.lib:lib-util:2.0.0'
+	
+		// When using lib-util 3.0.0+, lib-context and lib-admin are also needed. Add these if they are not already in your build:
+        include "com.enonic.xp:lib-context:${xpVersion}"
+        include "com.enonic.xp:lib-admin:${xpVersion}"
+        
+		// Lib-util:
+		include 'com.enonic.lib:lib-util:3.0.0'
     }
 
 ### Controllers (3 & 4)
