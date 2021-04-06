@@ -24,12 +24,12 @@ The documentation can be found in [docs](/docs/index.md)
     }
 
     dependencies {
-	
+
         // Depending on version (3.0.0+), lib-context and lib-admin may also be needed.
         // If problems, and they are not already in your build, add these:
         // include "com.enonic.xp:lib-context:${xpVersion}"
         // include "com.enonic.xp:lib-admin:${xpVersion}"
-        
+
         // Lib-util:
         include 'com.enonic.lib:lib-util:3.0.0'
     }
@@ -67,7 +67,7 @@ Refer to each js-file in `/lib/util/` on GitHub for documentation on each functi
 
 * Buildsystem upgrades:
   * Node 14.16.0
-  * Babel modules 7.13.8
+  * Babel modules 7.13.14
   * All node modules up to date
 
 ### 3.0.0
