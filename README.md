@@ -66,7 +66,7 @@ Refer to each js-file in `/lib/util/` on GitHub for documentation on each functi
 ### 3.1.0-SNAPSHOT
 
 * Buildsystem upgrades:
-  * Node 14.16.0
+  * Node 14.17.0
   * Babel modules 7.13.14
   * All node modules up to date
 
