@@ -67,7 +67,8 @@ Refer to each js-file in `/lib/util/` on GitHub for documentation on each functi
 
 * Buildsystem upgrades:
   * Node 14.17.0
-  * Babel modules 7.13.14
+  * Babel modules 7.14.4
+  * Core JS 3.13.1
   * All node modules up to date
 
 ### 3.0.0
