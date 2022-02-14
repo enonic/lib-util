@@ -2,7 +2,7 @@ plugins {
 	id 'java'
 	id 'maven-publish' // Provides publishToMavenLocal
 	id 'com.enonic.defaults' version '2.0.1'
-	id "com.github.node-gradle.node" version '3.1.1'
+	id "com.github.node-gradle.node" version '3.2.0'
 }
 
 dependencies {
