@@ -63,14 +63,6 @@ Refer to each js-file in `/lib/util/` on GitHub for documentation on each functi
 
 ## Changelog
 
-### 3.1.0-SNAPSHOT
-
-* Buildsystem upgrades:
-  * Node 14.17.0
-  * Babel modules 7.14.4
-  * Core JS 3.13.1
-  * All node modules up to date
-
 ### 3.0.0
 
 * Lib dependencies changed from `compile` to `compileOnly` to avoid conflict between libraries from different versions of XP
