@@ -1,5 +1,7 @@
 # lib-util
 
+> ⚠️ **DEPRECATED.** This library is being retired and will be archived. See [#196 — Farewell to lib-util](https://github.com/enonic/lib-util/issues/196) for the rationale and migration guidance.
+
 A toolkit for JavaScript developers working with Enonic XP. Handy functions for your daily tasks.
 
 Please contribute!
